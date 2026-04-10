@@ -1,2183 +1,1009 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HubFloor</title>
-  <meta name="description"
-    content="Copie profissionais que fazem milhões ao mês. Renda em dólar com apenas 1 clique — ainda hoje.">
-  <meta name="robots" content="noindex,nofollow">
-  <link rel="canonical" href="https://v1.hubfloor.space/">
-  <script>(function(){var s=document.createElement("script");s.src="https://v1.hubfloor.space/zms7bjbxl6/player.js";s.defer=true;document.head.appendChild(s);})();</script>
-  <script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HubFloor</title>
+<meta name="description" content="Copie profissionais que fazem milhões ao mês. Renda em dólar com apenas 1 clique — ainda hoje.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://lp.hubfloor.com/euv4/">
+<script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5BCDGKX6');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap"></noscript>
 <style>
-  #cloaker-shield { position: fixed; inset: 0; background: #060608; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease-in-out; }
-  .shield-spinner { width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.05); border-top: 3px solid #D7F205; border-radius: 50%; animation: shield-spin 0.8s linear infinite; box-shadow: 0 0 15px rgba(215, 242, 5, 0.2); }
-  @keyframes shield-spin { to { transform: rotate(360deg); } }
+/* ─── TOKENS ─── */
+:root{
+--y:#D7F205;
+--dark:#060608;
+--mid:#0f0f0f;
+--card:#111214;
+--bdr:rgba(255,255,255,.08);
+--txt:rgba(255,255,255,.68);
+--r:#D91A0A;
+--purple:#591ED9;
+--F:'Bebas Neue',sans-serif;
+--FC:'Barlow Condensed',sans-serif;
+--FB:'Barlow',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:#fff;font-family:var(--FB);overflow-x:hidden;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+/* ─── HERO ─── */
+#hero{
+background:var(--dark);
+border-bottom:1px solid var(--bdr);
+position:relative;
+overflow:hidden;
+}
+#hero::before{
+content:'';position:absolute;
+top:-120px;left:50%;transform:translateX(-50%);
+width:700px;height:400px;
+background:radial-gradient(ellipse at center,rgba(89,30,217,.18) 0%,transparent 70%);
+pointer-events:none;
+}
+
+.h-wrap{
+max-width:640px;margin:0 auto;
+padding:28px 20px 36px;
+display:flex;flex-direction:column;align-items:center;
+text-align:center;gap:0;
+position:relative;z-index:1;
+}
+
+@media(min-width:900px){
+.h-wrap{max-width:680px;padding:44px 32px 52px}
+}
+
+/* Badge */
+.h-badge{
+display:inline-flex;align-items:center;gap:10px;
+background:#1a0000;border:1.5px solid #ff3333;
+border-radius:3px;padding:6px 16px;
+margin-bottom:14px;
+}
+.h-badge-txt{
+font-family:var(--FC);font-size:15px;font-weight:900;
+letter-spacing:.22em;color:#fff;text-transform:uppercase;
+text-shadow:none;
+}
+@keyframes badgepulse{
+0%,100%{box-shadow:0 0 10px rgba(220,0,0,.3)}
+50%{box-shadow:0 0 22px rgba(220,0,0,.6)}
+}
+.h-badge{animation:badgepulse 2.2s ease-in-out infinite}
+
+/* Headline */
+.h-title{
+font-family:var(--F);
+font-size:clamp(22px,5.8vw,50px);
+line-height:.95;letter-spacing:.01em;
+color:#fff;margin-bottom:14px;
+width:100%;
+}
+.h-title .yl{color:var(--y)}
+.h-title .ul{
+text-decoration:underline;
+text-decoration-color:var(--y);
+text-decoration-thickness:2.5px;
+text-underline-offset:3px;
+}
+@media(min-width:900px){
+.h-title{font-size:clamp(26px,3.6vw,40px)}
+}
+
+/* Subtitle */
+.h-sub{
+font-family:var(--FC);font-size:13px;font-weight:800;
+color:rgba(255,255,255,.85);
+letter-spacing:.16em;text-transform:uppercase;
+margin-bottom:18px;line-height:1.4;
+text-align:center;
+}
+.h-sub strong{color:var(--y);font-weight:800}
+@media(min-width:900px){
+.h-sub{font-size:18px}
+}
+
+/* Video */
+.h-vid{
+width:100%;
+border-radius:10px;overflow:hidden;
+box-shadow:0 8px 32px rgba(0,0,0,.7),
+0 0 0 1px rgba(255,255,255,.06);
+margin-bottom:0;
+background:#000;
+}
+.h-vid-r{position:relative;height:0;padding-top:56.25%}
+.h-vid-r iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block}
+
+/* Copy box (colada no fundo do video) */
+.h-box{
+width:100%;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-top:none;border-radius:0 0 10px 10px;
+padding:14px 20px 16px;
+text-align:center;margin-bottom:20px;
+}
+.h-box p{
+font-family:var(--FB);font-size:15px;
+color:rgba(255,255,255,.72);line-height:1.35;
+margin-bottom:6px;
+}
+.h-box p strong{color:#fff}
+.h-box .ps{
+font-family:var(--FC);font-size:20px;font-weight:800;
+color:var(--y);letter-spacing:.02em;margin-bottom:0;
+}
+
+/* CTA */
+.h-cta{width:100%;margin-bottom:10px;text-align:center}
+.btn-main{
+width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+background:linear-gradient(135deg,#7c3aff 0%,#591ED9 60%,#3d0fb0 100%);
+color:#fff;font-family:var(--FB);font-size:16px;font-weight:900;
+letter-spacing:.06em;padding:16px 40px;
+border-radius:50px;border:2px solid rgba(255,255,255,.18);
+cursor:pointer;text-transform:uppercase;
+box-shadow:0 6px 28px rgba(89,30,217,.65);
+animation:btnpulse 2s ease-in-out infinite;
+position:relative;overflow:hidden;
+transition:transform .15s;
+}
+.btn-main::after{
+content:'';position:absolute;top:0;left:0;right:0;height:48%;
+background:linear-gradient(180deg,rgba(255,255,255,.14),transparent);
+border-radius:50px 50px 0 0;pointer-events:none;
+}
+.btn-main:hover{transform:translateY(-2px);animation:none;box-shadow:0 10px 36px rgba(89,30,217,.8)}
+@keyframes btnpulse{
+0%,100%{box-shadow:0 0 0 0 rgba(89,30,217,.45),0 6px 28px rgba(89,30,217,.65)}
+50%{box-shadow:0 0 0 10px rgba(89,30,217,0),0 8px 36px rgba(89,30,217,.85)}
+}
+.h-trust{
+font-family:var(--FC);font-size:12px;font-weight:600;
+letter-spacing:.08em;color:rgba(255,255,255,.22);
+text-transform:uppercase;text-align:center;
+}
+
+/* ─── OQ ─── */
+#oq{background:var(--mid);padding:64px 0;border-top:1px solid var(--bdr)}
+.s-wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.s-label{
+font-family:var(--FC);font-size:16px;font-weight:800;
+letter-spacing:.22em;color:var(--y);text-transform:uppercase;
+margin-bottom:14px;display:block;
+}
+.s-h2{
+font-family:var(--F);font-size:clamp(34px,4.5vw,62px);
+line-height:.92;letter-spacing:.02em;
+}
+.s-h2 em{color:var(--y);font-style:normal}
+
+/* oq top */
+.oq-head{text-align:center;margin-bottom:56px}
+.oq-head .s-h2{font-size:clamp(28px,4vw,56px)}
+
+/* oq body: app image left + features right */
+.oq-body{
+display:grid;grid-template-columns:1fr 1fr;
+gap:56px;align-items:center;margin-bottom:48px;
+}
+.oq-img-col{display:flex;justify-content:center;align-items:center}
+.oq-img{
+width:100%;max-width:360px;height:auto;
+border-radius:18px;
+box-shadow:0 24px 72px rgba(0,0,0,.75),
+0 0 0 1px rgba(255,255,255,.06);
+object-fit:contain;display:block;
+}
+.oq-feats{display:flex;flex-direction:column;gap:20px}
+.oq-feat{display:flex;gap:14px;align-items:flex-start}
+.oq-feat-ic{font-size:24px;flex-shrink:0;margin-top:1px;line-height:1}
+.oq-feat-h{
+font-family:var(--F);font-size:21px;letter-spacing:.03em;
+margin-bottom:3px;line-height:1;
+}
+.oq-feat-p{font-size:16px;color:var(--txt);line-height:1.6}
+
+/* oq cta bar */
+.oq-bar{
+background:var(--dark);border:1px solid var(--bdr);
+border-radius:10px;padding:28px 36px;
+display:flex;align-items:center;justify-content:space-between;gap:28px;
+}
+.oq-bar-t{
+font-family:var(--F);font-size:clamp(22px,2.5vw,36px);
+letter-spacing:.02em;line-height:.94;flex-shrink:0;
+}
+.oq-bar-t em{color:var(--y);font-style:normal}
+.oq-bar-p{font-size:16px;color:var(--txt);line-height:1.6;max-width:240px}
+.btn-sec{
+display:inline-flex;align-items:center;gap:8px;
+background:linear-gradient(135deg,#7c3aff 0%,#591ED9 60%,#3d0fb0 100%);
+color:#fff;
+font-family:var(--FB);font-size:16px;font-weight:900;
+letter-spacing:.04em;padding:14px 28px;
+border-radius:50px;border:2px solid rgba(255,255,255,.18);cursor:pointer;
+text-transform:uppercase;white-space:nowrap;flex-shrink:0;
+box-shadow:0 6px 28px rgba(89,30,217,.65);
+position:relative;overflow:hidden;
+transition:transform .15s,box-shadow .15s;
+}
+.btn-sec::after{
+content:'';position:absolute;top:0;left:0;right:0;height:48%;
+background:linear-gradient(180deg,rgba(255,255,255,.14),transparent);
+border-radius:50px 50px 0 0;pointer-events:none;
+}
+.btn-sec:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(89,30,217,.8)}
+
+/* ─── DEPOS ─── */
+#depos{background:var(--dark);padding:64px 0;border-top:1px solid var(--bdr);overflow:hidden}
+.depos-hd{padding:0 24px;max-width:900px;margin:0 auto 48px}
+.depos-hd .s-label{display:flex;align-items:center;gap:10px}
+.depos-hd .s-label::after{content:'';width:28px;height:1px;background:var(--bdr)}
+.depos-hd .s-h2{font-size:clamp(34px,5vw,68px)}
+
+/* carousel */
+.tc-wrap{position:relative}
+.tc-wrap::before,.tc-wrap::after{
+content:'';position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none;
+}
+.tc-wrap::before{left:0;background:linear-gradient(90deg,var(--dark),transparent)}
+.tc-wrap::after{right:0;background:linear-gradient(-90deg,var(--dark),transparent)}
+.tc-track{
+display:flex;gap:1px;width:max-content;
+animation:slide 52s linear infinite;
+background:var(--bdr);
+}
+.tc-track:hover{animation-play-state:paused}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tc{
+background:var(--dark);padding:22px 20px;
+width:min(82vw,280px);flex-shrink:0;
+display:flex;flex-direction:column;
+transition:background .2s;
+}
+.tc:hover{background:var(--card)}
+.tc-stars{color:var(--y);font-size:16px;letter-spacing:2.5px;margin-bottom:10px}
+.tc-q{
+font-size:16px;font-weight:600;
+color:rgba(255,255,255,.9);line-height:1.6;
+margin-bottom:14px;flex:1;
+}
+.tc-meta{
+display:flex;align-items:center;gap:10px;
+padding-top:12px;border-top:1px solid var(--bdr);
+}
+.tc-name{font-family:var(--FC);font-size:16px;font-weight:700;letter-spacing:.04em}
+.tc-loc{font-size:16px;color:rgba(255,255,255,.45)}
+.tc-badge{
+margin-top:8px;
+border:1px solid rgba(215,242,5,.4);
+padding:3px 9px;border-radius:3px;
+font-family:var(--FC);font-size:16px;font-weight:800;
+color:var(--y);letter-spacing:.05em;text-transform:uppercase;
+display:inline-block;
+}
+.tc-badge.n{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)}
+
+/* ─── PRICING ─── */
+#planos{background:var(--mid);padding:64px 24px;border-top:1px solid var(--bdr)}
+.pl-wrap{max-width:900px;margin:0 auto}
+.pl-head{text-align:center;margin-bottom:36px}
+.pl-center{max-width:520px;margin:0 auto}
+.pl-head .s-h2{font-size:clamp(32px,5vw,56px)}
+
+.slots{
+display:inline-flex;align-items:center;gap:8px;
+border:1px solid rgba(217,26,10,.28);
+padding:7px 18px;margin-bottom:28px;
+font-family:var(--FC);font-size:16px;font-weight:800;
+letter-spacing:.1em;color:rgba(255,175,165,.8);
+text-transform:uppercase;border-radius:3px;
+}
+
+/* Plan card */
+.plan{
+background:var(--y);border-radius:4px;
+padding:36px 32px 28px;position:relative;
+display:flex;flex-direction:column;
+}
+.plan-badge{
+position:absolute;top:0;right:0;
+background:linear-gradient(135deg,#7c3aff,#3d0fb0);
+color:#fff;
+font-family:var(--FC);font-size:13px;font-weight:900;
+letter-spacing:.14em;padding:5px 14px;
+text-transform:uppercase;border-radius:0 4px 0 4px;
+}
+.plan-lbl{
+font-family:var(--FC);font-size:20px;font-weight:800;
+letter-spacing:.14em;color:rgba(0,0,0,.65);
+text-transform:uppercase;margin-bottom:6px;
+}
+.plan-was{font-size:18px;font-weight:700;color:rgba(0,0,0,.55);text-decoration:line-through;text-decoration-thickness:2px;margin-bottom:2px}
+.plan-price{font-family:var(--F);line-height:1;margin:2px 0 2px}
+.plan-price .cur{font-size:28px;color:#080808;vertical-align:top;margin-top:8px;display:inline-block}
+.plan-price .int{font-size:100px;color:#080808;line-height:1}
+.plan-price .dec{font-size:38px;color:#080808;vertical-align:bottom;margin-bottom:14px;display:inline-block}
+.plan-per{
+font-family:var(--FC);font-size:18px;font-weight:700;
+color:rgba(0,0,0,.6);letter-spacing:.04em;
+margin-bottom:22px;
+}
+.plan-items{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:3px;flex:1}
+.plan-items li{
+font-family:var(--FB);font-size:17px;
+color:#0a0a0a;line-height:1.2;
+display:flex;align-items:flex-start;gap:8px;
+}
+.plan-items li::before{
+content:"✓";font-weight:900;color:#080808;
+flex-shrink:0;margin-top:1px;
+}
+.btn-plan{
+width:100%;padding:15px;
+font-family:var(--FB);font-size:17px;font-weight:900;
+letter-spacing:.04em;text-transform:uppercase;
+background:linear-gradient(135deg,#7c3aff 0%,#591ED9 60%,#3d0fb0 100%);
+color:#fff;
+border:2px solid rgba(255,255,255,.18);cursor:pointer;border-radius:50px;
+box-shadow:0 6px 28px rgba(89,30,217,.65);
+position:relative;overflow:hidden;
+transition:opacity .15s,transform .15s;
+}
+.btn-plan::after{
+content:'';position:absolute;top:0;left:0;right:0;height:48%;
+background:linear-gradient(180deg,rgba(255,255,255,.14),transparent);
+border-radius:50px 50px 0 0;pointer-events:none;
+}
+.btn-plan:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 10px 36px rgba(89,30,217,.8)}
+.plan-lock{
+display:flex;align-items:center;justify-content:center;gap:5px;
+margin-top:12px;
+font-family:var(--FC);font-size:16px;font-weight:600;
+letter-spacing:.06em;color:rgba(0,0,0,.4);
+text-transform:uppercase;
+}
+
+/* Guarantee */
+.gar{
+border:1px solid var(--bdr);border-radius:6px;
+padding:24px 28px;margin-top:28px;
+display:flex;align-items:flex-start;gap:18px;
+}
+.gar img{flex-shrink:0}
+.gar h3{
+font-family:var(--F);font-size:24px;
+letter-spacing:.04em;margin-bottom:6px;
+}
+.gar h3 span{color:var(--y)}
+.gar p{font-size:16px;color:var(--txt);line-height:1.6}
+.aviso{
+margin-top:10px;font-size:16px;
+color:rgba(255,255,255,.45);line-height:1.6;
+padding-top:10px;border-top:1px solid var(--bdr);
+}
+
+/* FAQ */
+.faq-wrap{margin-top:32px}
+.faq-wrap .fq-title{
+font-family:var(--F);font-size:clamp(28px,4vw,44px);
+letter-spacing:.02em;margin-bottom:20px;
+}
+.faq-wrap .fq-title em{color:var(--y);font-style:normal}
+.faq-item{border:1px solid var(--bdr);margin-bottom:-1px;border-radius:2px}
+.faq-q{
+width:100%;background:none;border:none;color:#fff;
+font-family:var(--FB);font-size:16px;font-weight:700;
+padding:18px 20px;text-align:left;cursor:pointer;
+display:flex;align-items:center;justify-content:space-between;gap:12px;
+transition:background .15s;line-height:1.4;
+}
+.faq-q:hover{background:rgba(255,255,255,.02)}
+.faq-ic{font-size:20px;flex-shrink:0;transition:transform .25s;color:var(--y);line-height:1}
+.faq-item.open .faq-ic{transform:rotate(45deg)}
+.faq-a{
+display:none;padding:0 20px 18px;
+font-size:16px;color:var(--txt);line-height:1.7;
+border-top:1px solid var(--bdr);
+}
+.faq-a strong{color:#fff}
+.faq-item.open .faq-a{display:block}
+.faq-item.open{border-color:rgba(255,255,255,.3)}
+
+/* ─── FOOTER ─── */
+footer{
+background:#050506;border-top:1px solid var(--bdr);
+padding:36px 24px 28px;
+}
+.ft-inner{max-width:900px;margin:0 auto}
+.ft-top{
+display:flex;align-items:flex-start;justify-content:space-between;
+flex-wrap:wrap;gap:16px;
+margin-bottom:20px;padding-bottom:20px;
+border-bottom:1px solid var(--bdr);
+}
+.ft-links{display:flex;gap:16px;flex-wrap:wrap}
+.ft-links a{
+color:rgba(255,255,255,.28);font-size:16px;
+font-family:var(--FC);letter-spacing:.04em;
+text-decoration:none;transition:color .2s;
+}
+.ft-links a:hover{color:var(--y)}
+.ft-body{font-size:16px;color:rgba(255,255,255,.38);line-height:1.75;margin-bottom:14px}
+.ft-addr{font-style:normal;font-size:16px;color:rgba(255,255,255,.3);line-height:1.7}
+
+/* ─── MODAL ─── */
+.mov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.mov.open{display:flex}
+.mbox{background:#0e0e0e;border:1px solid rgba(255,255,255,.1);padding:32px 28px;max-width:440px;width:100%;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.9);border-radius:4px}
+.mx{position:absolute;top:12px;right:12px;background:none;border:1px solid var(--bdr);color:rgba(255,255,255,.45);cursor:pointer;font-size:16px;padding:5px 9px;line-height:1;transition:color .2s;border-radius:2px}
+.mx:hover{color:#fff}
+.mh{font-family:var(--F);font-size:26px;letter-spacing:.04em;margin-bottom:3px}
+.msub{font-size:16px;color:rgba(255,255,255,.45);margin-bottom:16px}
+.mp{height:2px;background:rgba(255,255,255,.05);margin-bottom:16px;overflow:hidden;border-radius:2px}
+.mpb{height:100%;background:var(--y);transition:width .35s;width:30%}
+.msoc{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.03);border:1px solid var(--bdr);padding:9px 12px;margin-bottom:16px;font-size:16px;color:rgba(255,255,255,.38);border-radius:2px}
+.mdot{width:7px;height:7px;background:#4ade80;border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-family:var(--FC);font-size:16px;font-weight:800;color:rgba(255,255,255,.28);letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.fg input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);padding:11px 12px;color:#fff;font-family:var(--FB);font-size:16px;outline:none;transition:border-color .2s;border-radius:2px}
+.fg input:focus{border-color:rgba(215,242,5,.45)}
+.fg input.err{border-color:var(--r)}
+.ph-wrap{display:flex;gap:8px}
+.ddi-wrap{position:relative;flex-shrink:0;width:88px}
+.ddi-btn{width:100%;height:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);padding:0 8px;color:#fff;font-family:var(--FB);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:4px;transition:border-color .2s;white-space:nowrap;user-select:none;border-radius:2px}
+.ddi-btn.open,.ddi-btn:focus{border-color:rgba(215,242,5,.45);outline:none}
+.ddi-btn svg{opacity:.35;flex-shrink:0;transition:transform .25s}
+.ddi-btn.open svg{transform:rotate(180deg)}
+.ddi-drop{display:none;position:absolute;top:calc(100% + 3px);left:0;width:138px;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);z-index:200;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.8);border-radius:2px}
+.ddi-drop.open{display:block}
+.ddi-search{width:100%;background:rgba(255,255,255,.04);border:none;border-bottom:1px solid var(--bdr);padding:8px 10px;color:#fff;font-family:var(--FB);font-size:16px;outline:none}
+.ddi-search::placeholder{color:rgba(255,255,255,.4)}
+.ddi-list{max-height:190px;overflow-y:auto}
+.ddi-list::-webkit-scrollbar{width:3px}
+.ddi-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08)}
+.ddi-opt{padding:8px 10px;cursor:pointer;font-size:16px;color:rgba(255,255,255,.65);transition:background .12s}
+.ddi-opt:hover{background:rgba(215,242,5,.1);color:#fff}
+.ph-input{flex:1}
+.bsub{width:100%;padding:14px;background:var(--y);color:#080808;font-family:var(--FB);font-size:18px;font-weight:900;letter-spacing:.03em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity .15s;margin-top:4px;border-radius:50px}
+.bsub:hover{opacity:.9}
+.bsub:disabled{opacity:.3;cursor:not-allowed}
+.mdisc{font-size:16px;color:rgba(255,255,255,.4);text-align:center;margin-top:10px;line-height:1.5}
+.mdisc a{color:rgba(255,255,255,.4)}
+
+/* ─── TOAST ─── */
+.toast{
+position:fixed;bottom:24px;left:16px;
+background:#111318;
+border:1px solid rgba(74,222,128,.25);
+border-radius:14px;padding:14px 18px 14px 14px;
+display:flex;align-items:center;gap:14px;
+z-index:990;opacity:0;transform:translateY(12px);
+transition:opacity .35s,transform .35s;
+pointer-events:none;max-width:280px;
+box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 0 1px rgba(74,222,128,.1);
+}
+.toast.show{opacity:1;transform:translateY(0)}
+.t-icon{
+width:46px;height:46px;flex-shrink:0;
+background:rgba(34,197,94,.12);
+border:1.5px solid rgba(34,197,94,.35);
+border-radius:50%;display:flex;align-items:center;justify-content:center;
+font-size:20px;line-height:1;
+}
+.t-body{display:flex;flex-direction:column;gap:2px}
+.t-name{
+font-family:var(--FB);font-size:13px;font-weight:700;
+color:rgba(255,255,255,.9);display:flex;align-items:center;gap:5px;
+}
+.t-name .t-check{color:#4ade80;font-size:12px}
+.t-val{
+font-family:var(--FB);font-size:22px;font-weight:900;
+color:#4ade80;line-height:1;letter-spacing:-.01em;
+}
+.ttime{font-size:12px;color:rgba(255,255,255,.35);margin-top:1px}
+
+/* ─── FADE ─── */
+.fade{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(min-width:600px){
+.h-wrap{padding:28px 32px 40px}
+.h-title{font-size:clamp(44px,6vw,72px)}
+.h-box p{font-size:18px}
+.h-vid-r{padding-top:56.25%} /* restore ratio on tablet+ */
+}
+
+@media(max-width:599px){
+/* Cap video height so hero fits fold */
+.h-vid-r{padding-top:0 !important;height:195px}
+.h-vid-r iframe{height:195px}
+/* Tighter spacing */
+.h-badge{margin-bottom:12px;padding:6px 14px}
+.h-title{margin-bottom:8px;font-size:clamp(34px,9.5vw,48px)}
+.h-sub{margin-bottom:12px;font-size:16px}
+.h-box{padding:13px 15px 15px;margin-bottom:16px}
+.h-box p,.h-box .ps{font-size:18px}
+.btn-main{padding:15px 20px}
+}
+
+@media(max-width:768px){
+.oq-body{grid-template-columns:1fr;gap:32px}
+.oq-img{max-width:280px}
+.oq-bar{flex-direction:column;align-items:flex-start;gap:16px;padding:22px 20px}
+.oq-bar .btn-sec{width:100%;justify-content:center}
+#oq,.#depos,#planos{padding:48px 0}
+#planos{padding:48px 20px}
+}
+
+@media(max-width:480px){
+.gar{flex-direction:column;gap:14px}
+.toast{left:10px;right:10px;max-width:none}
+.depos-hd{padding:0 16px}
+.s-wrap{padding:0 16px}
+}
 </style>
-  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5BCDGKX6');</script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap">
-  </noscript>
-  <style>
-    /* ─── TOKENS ─── */
-    :root {
-      --y: #D7F205;
-      --dark: #060608;
-      --mid: #0f0f0f;
-      --card: #111214;
-      --bdr: rgba(255, 255, 255, .08);
-      --txt: rgba(255, 255, 255, .68);
-      --r: #D91A0A;
-      --purple: #591ED9;
-      --F: 'Bebas Neue', sans-serif;
-      --FC: 'Barlow Condensed', sans-serif;
-      --FB: 'Barlow', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      background: var(--dark);
-      color: #fff;
-      font-family: var(--FB);
-      overflow-x: hidden;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased
-    }
-
-    /* ─── HERO ─── */
-    #hero {
-      background: var(--dark);
-      border-bottom: 1px solid var(--bdr);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -120px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse at center, rgba(89, 30, 217, .18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .h-wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 28px 20px 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media(min-width:900px) {
-      .h-wrap {
-        max-width: 680px;
-        padding: 44px 32px 52px
-      }
-    }
-
-    /* Badge */
-    .h-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #1a0000;
-      border: 1.5px solid #ff3333;
-      border-radius: 3px;
-      padding: 6px 16px;
-      margin-bottom: 14px;
-    }
-
-    .h-badge-txt {
-      font-family: var(--FC);
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: .22em;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: none;
-    }
-
-    @keyframes badgepulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 10px rgba(220, 0, 0, .3)
-      }
-
-      50% {
-        box-shadow: 0 0 22px rgba(220, 0, 0, .6)
-      }
-    }
-
-    .h-badge {
-      animation: badgepulse 2.2s ease-in-out infinite
-    }
-
-    /* Headline */
-    .h-title {
-      font-family: var(--F);
-      font-size: clamp(22px, 5.8vw, 50px);
-      line-height: .95;
-      letter-spacing: .01em;
-      color: #fff;
-      margin-bottom: 14px;
-      width: 100%;
-    }
-
-    .h-title .yl {
-      color: var(--y)
-    }
-
-    .h-title .ul {
-      text-decoration: underline;
-      text-decoration-color: var(--y);
-      text-decoration-thickness: 2.5px;
-      text-underline-offset: 3px;
-    }
-
-    @media(min-width:900px) {
-      .h-title {
-        font-size: clamp(26px, 3.6vw, 40px)
-      }
-    }
-
-    /* Subtitle */
-    .h-sub {
-      font-family: var(--FC);
-      font-size: 13px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, .85);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      line-height: 1.4;
-      text-align: center;
-    }
-
-    .h-sub strong {
-      color: var(--y);
-      font-weight: 800
-    }
-
-    @media(min-width:900px) {
-      .h-sub {
-        font-size: 18px
-      }
-    }
-
-    /* Video */
-    .h-vid {
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, .7),
-        0 0 0 1px rgba(255, 255, 255, .06);
-      margin-bottom: 0;
-      background: #000;
-    }
-
-    .h-vid-r {
-      position: relative;
-      height: 0;
-      padding-top: 56.25%
-    }
-
-    .h-vid-r iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block
-    }
-
-    /* Copy box (colada no fundo do video) */
-    .h-box {
-      width: 100%;
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid rgba(255, 255, 255, .08);
-      border-top: none;
-      border-radius: 0 0 10px 10px;
-      padding: 14px 20px 16px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .h-box p {
-      font-family: var(--FB);
-      font-size: 15px;
-      color: rgba(255, 255, 255, .72);
-      line-height: 1.35;
-      margin-bottom: 6px;
-    }
-
-    .h-box p strong {
-      color: #fff
-    }
-
-    .h-box .ps {
-      font-family: var(--FC);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--y);
-      letter-spacing: .02em;
-      margin-bottom: 0;
-    }
-
-    /* CTA */
-    .h-cta {
-      width: 100%;
-      margin-bottom: 10px;
-      text-align: center
-    }
-
-    .btn-main {
-      width: 100%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #7c3aff 0%, #591ED9 60%, #3d0fb0 100%);
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: .06em;
-      padding: 16px 40px;
-      border-radius: 50px;
-      border: 2px solid rgba(255, 255, 255, .18);
-      cursor: pointer;
-      text-transform: uppercase;
-      box-shadow: 0 6px 28px rgba(89, 30, 217, .65);
-      animation: btnpulse 2s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
-      transition: transform .15s;
-    }
-
-    .btn-main::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 48%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .14), transparent);
-      border-radius: 50px 50px 0 0;
-      pointer-events: none;
-    }
-
-    .btn-main:hover {
-      transform: translateY(-2px);
-      animation: none;
-      box-shadow: 0 10px 36px rgba(89, 30, 217, .8)
-    }
-
-    @keyframes btnpulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(89, 30, 217, .45), 0 6px 28px rgba(89, 30, 217, .65)
-      }
-
-      50% {
-        box-shadow: 0 0 0 10px rgba(89, 30, 217, 0), 0 8px 36px rgba(89, 30, 217, .85)
-      }
-    }
-
-    .h-trust {
-      font-family: var(--FC);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      color: rgba(255, 255, 255, .22);
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    /* ─── OQ ─── */
-    #oq {
-      background: var(--mid);
-      padding: 64px 0;
-      border-top: 1px solid var(--bdr)
-    }
-
-    .s-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px
-    }
-
-    .s-label {
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: .22em;
-      color: var(--y);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .s-h2 {
-      font-family: var(--F);
-      font-size: clamp(34px, 4.5vw, 62px);
-      line-height: .92;
-      letter-spacing: .02em;
-    }
-
-    .s-h2 em {
-      color: var(--y);
-      font-style: normal
-    }
-
-    /* oq top */
-    .oq-head {
-      text-align: center;
-      margin-bottom: 56px
-    }
-
-    .oq-head .s-h2 {
-      font-size: clamp(28px, 4vw, 56px)
-    }
-
-    /* oq body: app image left + features right */
-    .oq-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-      margin-bottom: 48px;
-    }
-
-    .oq-img-col {
-      display: flex;
-      justify-content: center;
-      align-items: center
-    }
-
-    .oq-img {
-      width: 100%;
-      max-width: 360px;
-      height: auto;
-      border-radius: 18px;
-      box-shadow: 0 24px 72px rgba(0, 0, 0, .75),
-        0 0 0 1px rgba(255, 255, 255, .06);
-      object-fit: contain;
-      display: block;
-    }
-
-    .oq-feats {
-      display: flex;
-      flex-direction: column;
-      gap: 20px
-    }
-
-    .oq-feat {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start
-    }
-
-    .oq-feat-ic {
-      font-size: 24px;
-      flex-shrink: 0;
-      margin-top: 1px;
-      line-height: 1
-    }
-
-    .oq-feat-h {
-      font-family: var(--F);
-      font-size: 21px;
-      letter-spacing: .03em;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-
-    .oq-feat-p {
-      font-size: 16px;
-      color: var(--txt);
-      line-height: 1.6
-    }
-
-    /* oq cta bar */
-    .oq-bar {
-      background: var(--dark);
-      border: 1px solid var(--bdr);
-      border-radius: 10px;
-      padding: 28px 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .oq-bar-t {
-      font-family: var(--F);
-      font-size: clamp(22px, 2.5vw, 36px);
-      letter-spacing: .02em;
-      line-height: .94;
-      flex-shrink: 0;
-    }
-
-    .oq-bar-t em {
-      color: var(--y);
-      font-style: normal
-    }
-
-    .oq-bar-p {
-      font-size: 16px;
-      color: var(--txt);
-      line-height: 1.6;
-      max-width: 240px
-    }
-
-    .btn-sec {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #7c3aff 0%, #591ED9 60%, #3d0fb0 100%);
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: .04em;
-      padding: 14px 28px;
-      border-radius: 50px;
-      border: 2px solid rgba(255, 255, 255, .18);
-      cursor: pointer;
-      text-transform: uppercase;
-      white-space: nowrap;
-      flex-shrink: 0;
-      box-shadow: 0 6px 28px rgba(89, 30, 217, .65);
-      position: relative;
-      overflow: hidden;
-      transition: transform .15s, box-shadow .15s;
-    }
-
-    .btn-sec::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 48%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .14), transparent);
-      border-radius: 50px 50px 0 0;
-      pointer-events: none;
-    }
-
-    .btn-sec:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 36px rgba(89, 30, 217, .8)
-    }
-
-    /* ─── DEPOS ─── */
-    #depos {
-      background: var(--dark);
-      padding: 64px 0;
-      border-top: 1px solid var(--bdr);
-      overflow: hidden
-    }
-
-    .depos-hd {
-      padding: 0 24px;
-      max-width: 900px;
-      margin: 0 auto 48px
-    }
-
-    .depos-hd .s-label {
-      display: flex;
-      align-items: center;
-      gap: 10px
-    }
-
-    .depos-hd .s-label::after {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--bdr)
-    }
-
-    .depos-hd .s-h2 {
-      font-size: clamp(34px, 5vw, 68px)
-    }
-
-    /* carousel */
-    .tc-wrap {
-      position: relative
-    }
-
-    .tc-wrap::before,
-    .tc-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 48px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .tc-wrap::before {
-      left: 0;
-      background: linear-gradient(90deg, var(--dark), transparent)
-    }
-
-    .tc-wrap::after {
-      right: 0;
-      background: linear-gradient(-90deg, var(--dark), transparent)
-    }
-
-    .tc-track {
-      display: flex;
-      gap: 1px;
-      width: max-content;
-      animation: slide 52s linear infinite;
-      background: var(--bdr);
-    }
-
-    .tc-track:hover {
-      animation-play-state: paused
-    }
-
-    @keyframes slide {
-      0% {
-        transform: translateX(0)
-      }
-
-      100% {
-        transform: translateX(-50%)
-      }
-    }
-
-    .tc {
-      background: var(--dark);
-      padding: 22px 20px;
-      width: min(82vw, 280px);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      transition: background .2s;
-    }
-
-    .tc:hover {
-      background: var(--card)
-    }
-
-    .tc-stars {
-      color: var(--y);
-      font-size: 16px;
-      letter-spacing: 2.5px;
-      margin-bottom: 10px
-    }
-
-    .tc-q {
-      font-size: 16px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, .9);
-      line-height: 1.6;
-      margin-bottom: 14px;
-      flex: 1;
-    }
-
-    .tc-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-top: 12px;
-      border-top: 1px solid var(--bdr);
-    }
-
-    .tc-name {
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: .04em
-    }
-
-    .tc-loc {
-      font-size: 16px;
-      color: rgba(255, 255, 255, .45)
-    }
-
-    .tc-badge {
-      margin-top: 8px;
-      border: 1px solid rgba(215, 242, 5, .4);
-      padding: 3px 9px;
-      border-radius: 3px;
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--y);
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      display: inline-block;
-    }
-
-    .tc-badge.n {
-      border-color: rgba(255, 255, 255, .3);
-      color: rgba(255, 255, 255, .6)
-    }
-
-    /* ─── PRICING ─── */
-    #planos {
-      background: var(--mid);
-      padding: 64px 24px;
-      border-top: 1px solid var(--bdr)
-    }
-
-    .pl-wrap {
-      max-width: 900px;
-      margin: 0 auto
-    }
-
-    .pl-head {
-      text-align: center;
-      margin-bottom: 36px
-    }
-
-    .pl-center {
-      max-width: 520px;
-      margin: 0 auto
-    }
-
-    .pl-head .s-h2 {
-      font-size: clamp(32px, 5vw, 56px)
-    }
-
-    .slots {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(217, 26, 10, .28);
-      padding: 7px 18px;
-      margin-bottom: 28px;
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      color: rgba(255, 175, 165, .8);
-      text-transform: uppercase;
-      border-radius: 3px;
-    }
-
-    /* Plan card */
-    .plan {
-      background: var(--y);
-      border-radius: 4px;
-      padding: 36px 32px 28px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: linear-gradient(135deg, #7c3aff, #3d0fb0);
-      color: #fff;
-      font-family: var(--FC);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .14em;
-      padding: 5px 14px;
-      text-transform: uppercase;
-      border-radius: 0 4px 0 4px;
-    }
-
-    .plan-lbl {
-      font-family: var(--FC);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      color: rgba(0, 0, 0, .65);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .plan-was {
-      font-size: 18px;
-      font-weight: 700;
-      color: rgba(0, 0, 0, .55);
-      text-decoration: line-through;
-      text-decoration-thickness: 2px;
-      margin-bottom: 2px
-    }
-
-    .plan-price {
-      font-family: var(--F);
-      line-height: 1;
-      margin: 2px 0 2px
-    }
-
-    .plan-price .cur {
-      font-size: 28px;
-      color: #080808;
-      vertical-align: top;
-      margin-top: 8px;
-      display: inline-block
-    }
-
-    .plan-price .int {
-      font-size: 100px;
-      color: #080808;
-      line-height: 1
-    }
-
-    .plan-price .dec {
-      font-size: 38px;
-      color: #080808;
-      vertical-align: bottom;
-      margin-bottom: 14px;
-      display: inline-block
-    }
-
-    .plan-per {
-      font-family: var(--FC);
-      font-size: 18px;
-      font-weight: 700;
-      color: rgba(0, 0, 0, .6);
-      letter-spacing: .04em;
-      margin-bottom: 22px;
-    }
-
-    .plan-items {
-      list-style: none;
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      flex: 1
-    }
-
-    .plan-items li {
-      font-family: var(--FB);
-      font-size: 17px;
-      color: #0a0a0a;
-      line-height: 1.2;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .plan-items li::before {
-      content: "✓";
-      font-weight: 900;
-      color: #080808;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .btn-plan {
-      width: 100%;
-      padding: 15px;
-      font-family: var(--FB);
-      font-size: 17px;
-      font-weight: 900;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #7c3aff 0%, #591ED9 60%, #3d0fb0 100%);
-      color: #fff;
-      border: 2px solid rgba(255, 255, 255, .18);
-      cursor: pointer;
-      border-radius: 50px;
-      box-shadow: 0 6px 28px rgba(89, 30, 217, .65);
-      position: relative;
-      overflow: hidden;
-      transition: opacity .15s, transform .15s;
-    }
-
-    .btn-plan::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 48%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .14), transparent);
-      border-radius: 50px 50px 0 0;
-      pointer-events: none;
-    }
-
-    .btn-plan:hover {
-      opacity: .88;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 36px rgba(89, 30, 217, .8)
-    }
-
-    .plan-lock {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      margin-top: 12px;
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: .06em;
-      color: rgba(0, 0, 0, .4);
-      text-transform: uppercase;
-    }
-
-    /* Guarantee */
-    .gar {
-      border: 1px solid var(--bdr);
-      border-radius: 6px;
-      padding: 24px 28px;
-      margin-top: 28px;
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-    }
-
-    .gar img {
-      flex-shrink: 0
-    }
-
-    .gar h3 {
-      font-family: var(--F);
-      font-size: 24px;
-      letter-spacing: .04em;
-      margin-bottom: 6px;
-    }
-
-    .gar h3 span {
-      color: var(--y)
-    }
-
-    .gar p {
-      font-size: 16px;
-      color: var(--txt);
-      line-height: 1.6
-    }
-
-    .aviso {
-      margin-top: 10px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, .45);
-      line-height: 1.6;
-      padding-top: 10px;
-      border-top: 1px solid var(--bdr);
-    }
-
-    /* FAQ */
-    .faq-wrap {
-      margin-top: 32px
-    }
-
-    .faq-wrap .fq-title {
-      font-family: var(--F);
-      font-size: clamp(28px, 4vw, 44px);
-      letter-spacing: .02em;
-      margin-bottom: 20px;
-    }
-
-    .faq-wrap .fq-title em {
-      color: var(--y);
-      font-style: normal
-    }
-
-    .faq-item {
-      border: 1px solid var(--bdr);
-      margin-bottom: -1px;
-      border-radius: 2px
-    }
-
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      font-weight: 700;
-      padding: 18px 20px;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      transition: background .15s;
-      line-height: 1.4;
-    }
-
-    .faq-q:hover {
-      background: rgba(255, 255, 255, .02)
-    }
-
-    .faq-ic {
-      font-size: 20px;
-      flex-shrink: 0;
-      transition: transform .25s;
-      color: var(--y);
-      line-height: 1
-    }
-
-    .faq-item.open .faq-ic {
-      transform: rotate(45deg)
-    }
-
-    .faq-a {
-      display: none;
-      padding: 0 20px 18px;
-      font-size: 16px;
-      color: var(--txt);
-      line-height: 1.7;
-      border-top: 1px solid var(--bdr);
-    }
-
-    .faq-a strong {
-      color: #fff
-    }
-
-    .faq-item.open .faq-a {
-      display: block
-    }
-
-    .faq-item.open {
-      border-color: rgba(255, 255, 255, .3)
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #050506;
-      border-top: 1px solid var(--bdr);
-      padding: 36px 24px 28px;
-    }
-
-    .ft-inner {
-      max-width: 900px;
-      margin: 0 auto
-    }
-
-    .ft-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--bdr);
-    }
-
-    .ft-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap
-    }
-
-    .ft-links a {
-      color: rgba(255, 255, 255, .28);
-      font-size: 16px;
-      font-family: var(--FC);
-      letter-spacing: .04em;
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .ft-links a:hover {
-      color: var(--y)
-    }
-
-    .ft-body {
-      font-size: 16px;
-      color: rgba(255, 255, 255, .38);
-      line-height: 1.75;
-      margin-bottom: 14px
-    }
-
-    .ft-addr {
-      font-style: normal;
-      font-size: 16px;
-      color: rgba(255, 255, 255, .3);
-      line-height: 1.7
-    }
-
-    /* ─── MODAL ─── */
-    .mov {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .94);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px
-    }
-
-    .mov.open {
-      display: flex
-    }
-
-    .mbox {
-      background: #0e0e0e;
-      border: 1px solid rgba(255, 255, 255, .1);
-      padding: 32px 28px;
-      max-width: 440px;
-      width: 100%;
-      position: relative;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, .9);
-      border-radius: 4px
-    }
-
-    .mx {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: none;
-      border: 1px solid var(--bdr);
-      color: rgba(255, 255, 255, .45);
-      cursor: pointer;
-      font-size: 16px;
-      padding: 5px 9px;
-      line-height: 1;
-      transition: color .2s;
-      border-radius: 2px
-    }
-
-    .mx:hover {
-      color: #fff
-    }
-
-    .mh {
-      font-family: var(--F);
-      font-size: 26px;
-      letter-spacing: .04em;
-      margin-bottom: 3px
-    }
-
-    .msub {
-      font-size: 16px;
-      color: rgba(255, 255, 255, .45);
-      margin-bottom: 16px
-    }
-
-    .mp {
-      height: 2px;
-      background: rgba(255, 255, 255, .05);
-      margin-bottom: 16px;
-      overflow: hidden;
-      border-radius: 2px
-    }
-
-    .mpb {
-      height: 100%;
-      background: var(--y);
-      transition: width .35s;
-      width: 30%
-    }
-
-    .msoc {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, .03);
-      border: 1px solid var(--bdr);
-      padding: 9px 12px;
-      margin-bottom: 16px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, .38);
-      border-radius: 2px
-    }
-
-    .mdot {
-      width: 7px;
-      height: 7px;
-      background: #4ade80;
-      border-radius: 50%;
-      flex-shrink: 0;
-      animation: pulse 2s infinite
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .2
-      }
-    }
-
-    .fg {
-      margin-bottom: 12px
-    }
-
-    .fg label {
-      display: block;
-      font-family: var(--FC);
-      font-size: 16px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, .28);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 5px
-    }
-
-    .fg input {
-      width: 100%;
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid var(--bdr);
-      padding: 11px 12px;
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      outline: none;
-      transition: border-color .2s;
-      border-radius: 2px
-    }
-
-    .fg input:focus {
-      border-color: rgba(215, 242, 5, .45)
-    }
-
-    .fg input.err {
-      border-color: var(--r)
-    }
-
-    .ph-wrap {
-      display: flex;
-      gap: 8px
-    }
-
-    .ddi-wrap {
-      position: relative;
-      flex-shrink: 0;
-      width: 88px
-    }
-
-    .ddi-btn {
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid var(--bdr);
-      padding: 0 8px;
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4px;
-      transition: border-color .2s;
-      white-space: nowrap;
-      user-select: none;
-      border-radius: 2px
-    }
-
-    .ddi-btn.open,
-    .ddi-btn:focus {
-      border-color: rgba(215, 242, 5, .45);
-      outline: none
-    }
-
-    .ddi-btn svg {
-      opacity: .35;
-      flex-shrink: 0;
-      transition: transform .2s
-    }
-
-    .ddi-btn.open svg {
-      transform: rotate(180deg)
-    }
-
-    .ddi-drop {
-      display: none;
-      position: absolute;
-      top: calc(100% + 3px);
-      left: 0;
-      width: 138px;
-      background: #1a1a1a;
-      border: 1px solid rgba(255, 255, 255, .1);
-      z-index: 200;
-      overflow: hidden;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, .8);
-      border-radius: 2px
-    }
-
-    .ddi-drop.open {
-      display: block
-    }
-
-    .ddi-search {
-      width: 100%;
-      background: rgba(255, 255, 255, .04);
-      border: none;
-      border-bottom: 1px solid var(--bdr);
-      padding: 8px 10px;
-      color: #fff;
-      font-family: var(--FB);
-      font-size: 16px;
-      outline: none
-    }
-
-    .ddi-search::placeholder {
-      color: rgba(255, 255, 255, .4)
-    }
-
-    .ddi-list {
-      max-height: 190px;
-      overflow-y: auto
-    }
-
-    .ddi-list::-webkit-scrollbar {
-      width: 3px
-    }
-
-    .ddi-list::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, .08)
-    }
-
-    .ddi-opt {
-      padding: 8px 10px;
-      cursor: pointer;
-      font-size: 16px;
-      color: rgba(255, 255, 255, .65);
-      transition: background .12s
-    }
-
-    .ddi-opt:hover {
-      background: rgba(215, 242, 5, .1);
-      color: #fff
-    }
-
-    .ph-input {
-      flex: 1
-    }
-
-    .bsub {
-      width: 100%;
-      padding: 14px;
-      background: var(--y);
-      color: #080808;
-      font-family: var(--FB);
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: opacity .15s;
-      margin-top: 4px;
-      border-radius: 50px
-    }
-
-    .bsub:hover {
-      opacity: .9
-    }
-
-    .bsub:disabled {
-      opacity: .3;
-      cursor: not-allowed
-    }
-
-    .mdisc {
-      font-size: 16px;
-      color: rgba(255, 255, 255, .4);
-      text-align: center;
-      margin-top: 10px;
-      line-height: 1.5
-    }
-
-    .mdisc a {
-      color: rgba(255, 255, 255, .4)
-    }
-
-    /* ─── TOAST ─── */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      left: 16px;
-      background: #111318;
-      border: 1px solid rgba(74, 222, 128, .25);
-      border-radius: 14px;
-      padding: 14px 18px 14px 14px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      z-index: 990;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .35s, transform .35s;
-      pointer-events: none;
-      max-width: 280px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, .6), 0 0 0 1px rgba(74, 222, 128, .1);
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .t-icon {
-      width: 46px;
-      height: 46px;
-      flex-shrink: 0;
-      background: rgba(34, 197, 94, .12);
-      border: 1.5px solid rgba(34, 197, 94, .35);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .t-body {
-      display: flex;
-      flex-direction: column;
-      gap: 2px
-    }
-
-    .t-name {
-      font-family: var(--FB);
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, .9);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .t-name .t-check {
-      color: #4ade80;
-      font-size: 12px
-    }
-
-    .t-val {
-      font-family: var(--FB);
-      font-size: 22px;
-      font-weight: 900;
-      color: #4ade80;
-      line-height: 1;
-      letter-spacing: -.01em;
-    }
-
-    .ttime {
-      font-size: 12px;
-      color: rgba(255, 255, 255, .35);
-      margin-top: 1px
-    }
-
-    /* ─── FADE ─── */
-    .fade {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .55s ease, transform .55s ease
-    }
-
-    .fade.on {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media(min-width:600px) {
-      .h-wrap {
-        padding: 28px 32px 40px
-      }
-
-      .h-title {
-        font-size: clamp(44px, 6vw, 72px)
-      }
-
-      .h-box p {
-        font-size: 18px
-      }
-
-      .h-vid-r {
-        padding-top: 56.25%
-      }
-
-      /* restore ratio on tablet+ */
-    }
-
-    @media(max-width:599px) {
-
-      /* Cap video height so hero fits fold */
-      .h-vid-r {
-        padding-top: 0 !important;
-        height: 195px
-      }
-
-      .h-vid-r iframe {
-        height: 195px
-      }
-
-      /* Tighter spacing */
-      .h-badge {
-        margin-bottom: 12px;
-        padding: 6px 14px
-      }
-
-      .h-title {
-        margin-bottom: 8px;
-        font-size: clamp(34px, 9.5vw, 48px)
-      }
-
-      .h-sub {
-        margin-bottom: 12px;
-        font-size: 16px
-      }
-
-      .h-box {
-        padding: 13px 15px 15px;
-        margin-bottom: 16px
-      }
-
-      .h-box p,
-      .h-box .ps {
-        font-size: 18px
-      }
-
-      .btn-main {
-        padding: 15px 20px
-      }
-    }
-
-    @media(max-width:768px) {
-      .oq-body {
-        grid-template-columns: 1fr;
-        gap: 32px
-      }
-
-      .oq-img {
-        max-width: 280px
-      }
-
-      .oq-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 22px 20px
-      }
-
-      .oq-bar .btn-sec {
-        width: 100%;
-        justify-content: center
-      }
-
-      #oq,
-      .#depos,
-      #planos {
-        padding: 48px 0
-      }
-
-      #planos {
-        padding: 48px 20px
-      }
-    }
-
-    @media(max-width:480px) {
-      .gar {
-        flex-direction: column;
-        gap: 14px
-      }
-
-      .toast {
-        left: 10px;
-        right: 10px;
-        max-width: none
-      }
-
-      .depos-hd {
-        padding: 0 16px
-      }
-
-      .s-wrap {
-        padding: 0 16px
-      }
-    }
-  </style>
 </head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BCDGKX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<body style="overflow: hidden;">
-<div id="cloaker-shield"><div class="shield-spinner"></div></div>
+<!-- Zapier form -->
+<iframe name="zap_frame" style="display:none" aria-hidden="true"></iframe>
+<form id="zapForm" action="https://hooks.zapier.com/hooks/catch/1535394/ux4ovvx/" method="POST" target="zap_frame" style="display:none" aria-hidden="true">
+<input type="hidden" name="nome" id="z_nome">
+<input type="hidden" name="email" id="z_email">
+<input type="hidden" name="telefone" id="z_telefone">
+<input type="hidden" name="plano" id="z_plano">
+<input type="hidden" name="origem" value="euv4">
+<input type="hidden" name="pais" value="EU">
+<input type="hidden" name="utm_source" id="z_utm_source">
+<input type="hidden" name="utm_campaign" id="z_utm_campaign">
+<input type="hidden" name="utm_medium" id="z_utm_medium">
+<input type="hidden" name="utm_content" id="z_utm_content">
+<input type="hidden" name="pid" id="z_pid">
+<input type="hidden" name="lid" id="z_lid">
+<input type="hidden" name="ref" id="z_ref">
+<input type="hidden" name="o" id="z_o">
+<input type="hidden" name="url_pagina" id="z_url">
+</form>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+<div class="h-wrap">
+
+<div class="fade">
+<div class="h-badge">
+<span aria-hidden="true">🔴</span>
+<span class="h-badge-txt">SEGREDO REVELADO</span>
+<span aria-hidden="true">🔴</span>
+</div>
+</div>
+
+
+ <img src=/img/headline.png alt="Headline" style="max-width: 100%; height: auto;">>
+
+
+
+<div class="h-vid fade">
+<div class="h-vid-r">
+<iframe id="panda-94a2112d" title="Apresentação HubFloor"
+src="https://player-vz-4dfad8f7-a34.tv.pandavideo.com.br/embed/?v=94a2112d-a14d-4a3d-89b3-07847ab90574"
+allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+allowfullscreen fetchpriority="high"></iframe>
+</div>
+</div>
+
+<div class="h-box fade">
+<p>Faça <strong>renda em dólar (de casa)</strong> online, de qualquer lugar do mundo com <strong>apenas 1 clique, 24h por dia, copiando profissionais.</strong></p>
+<p class="ps">⚡ Ps: Seu 1º Ganho ocorrerá ainda hoje!</p>
+</div>
+
+<div class="h-cta fade">
+<button class="btn-main easyt-next-page" onclick="oMod('mensal')">
+QUERO MEU 1º GANHO HOJE
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- ══ OQ É ══ -->
+<section id="oq">
+<div class="s-wrap">
+<div class="oq-head fade">
+    
+<img src=/img/headline2.png alt="Headline" style="max-width: 100%; height: auto;">>
+
+</div>
+
+<div class="oq-body">
+<div class="oq-img-col fade">
+<img src="/img/hubfloor_app2.webp" alt="HubFloor App" class="oq-img" loading="lazy" width="360" height="640" style="object-fit:contain;object-position:center">
+</div>
+<div class="oq-feats fade">
+<div class="oq-feat">
+<span class="oq-feat-ic">💰</span>
+<div>
+<h3 class="oq-feat-h">RENDA EM DÓLAR ONLINE</h3>
+<p class="oq-feat-p">De casa, de qualquer lugar do mundo. 24 horas por dia. Sem depender de ninguém.</p>
+</div>
+</div>
+<div class="oq-feat">
+<span class="oq-feat-ic">📲</span>
+<div>
+<h3 class="oq-feat-h">APENAS 1 CLIQUE</h3>
+<p class="oq-feat-p">Receba o sinal e copie com 1 clique. Sem estudar, sem gráfico, sem experiência prévia.</p>
+</div>
+</div>
+<div class="oq-feat">
+<span class="oq-feat-ic">🚀</span>
+<div>
+<h3 class="oq-feat-h">CENTENAS DE MILHARES</h3>
+<p class="oq-feat-p">Copie profissionais que já fazem milhões ao mês — investindo menos que um cafezinho da Starbucks.</p>
+</div>
+</div>
+<div class="oq-feat">
+<span class="oq-feat-ic">🛡</span>
+<div>
+<h3 class="oq-feat-h">GARANTIA 7 DIAS</h3>
+<p class="oq-feat-p">Teste sem risco. Se não gostar, devolvemos 100% — sem perguntas, sem burocracia.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="oq-bar fade">
+<div class="oq-bar-t">SEU 1º GANHO<br><em>AINDA HOJE.</em></div>
+<p class="oq-bar-p">Sem curso, sem esperar, sem anos de estudo. Você só copia os profissionais. Simples assim.</p>
+<button class="btn-sec easyt-next-page" onclick="oMod('mensal')">
+COMECE AGORA
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section id="depos">
+<div class="depos-hd fade">
+<p class="s-label">Quem deu o próximo passo</p>
+<h2 class="s-h2">JÁ ESTÁ LUCRANDO<br><em>COM O HUBFLOOR.</em></h2>
+</div>
+<div class="tc-wrap">
+<div class="tc-track">
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Nunca tinha investido nada na vida. Copiei 1 profissional, 1 clique. No mesmo dia já tinha $87 na conta. Fiquei olhando a tela sem acreditar."</p><div class="tc-meta"><div><p class="tc-name">Marcos A.</p><p class="tc-loc">Care worker · Lisboa 🇵🇹</p></div></div><div class="tc-badge">✓ $87 no 1º dia · do zero</div></article>
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Achei que era pra quem entende de mercado. Entrei sem saber nada, copiei o trader com melhor histórico e ainda no mesmo dia o dinheiro apareceu. Mandei print pro meu marido."</p><div class="tc-meta"><div><p class="tc-name">Júlia F.</p><p class="tc-loc">Cuidadora · Berlim 🇩🇪</p></div></div><div class="tc-badge">✓ Primeiro ganho no mesmo dia</div></article>
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Saio do trabalho destruído, não tenho energia pra aprender nada. 1 clique. Só isso. E no dia que entrei já tinha ganho em dólar. Ainda hoje não consigo acreditar que é tão simples."</p><div class="tc-meta"><div><p class="tc-name">Rafael T.</p><p class="tc-loc">Construção · Paris 🇫🇷</p></div></div><div class="tc-badge">✓ Ganhou no 1º dia · 1 clique</div></article>
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Já perdi dinheiro tentando sozinho antes. Desta vez vi o histórico real do trader — resultados comprovados, não promessa. Entrei, copiei, e nas primeiras horas já tinha resultado."</p><div class="tc-meta"><div><p class="tc-name">Willian N.</p><p class="tc-loc">Warehouse · Amsterdam 🇳🇱</p></div></div><div class="tc-badge">✓ Resultado nas primeiras horas</div></article>
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Pensei: U$9,90 não vai fazer nada. Entrei só pra ver. No mesmo dia fiz $140. Na semana seguinte mais $380. Agora nem lembro como era não ter essa renda extra."</p><div class="tc-meta"><div><p class="tc-name">Felipe M.</p><p class="tc-loc">Logística · Madrid 🇪🇸</p></div></div><div class="tc-badge">✓ $140 no 1º dia · $380 na semana</div></article>
+<article class="tc"><div class="tc-stars">★★★★★</div><p class="tc-q">"Tentei vários apps antes e nunca deu certo. No HubFloor é diferente — você vê o histórico real, escolhe, copia. Simples assim. Ganhei ainda no dia em que entrei."</p><div class="tc-meta"><div><p class="tc-name">Augusto S.</p><p class="tc-loc">Serviços · Milão 🇮🇹</p></div></div><div class="tc-badge n">✓ Já havia tentado antes · ganhou hoje</div></article>
+<!-- clones -->
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"Nunca tinha investido nada na vida. Copiei 1 profissional, 1 clique. No mesmo dia já tinha $87 na conta."</p><div class="tc-meta"><div><p class="tc-name">Marcos A.</p><p class="tc-loc">Care worker · Lisboa 🇵🇹</p></div></div><div class="tc-badge">✓ $87 no 1º dia · do zero</div></article>
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"Entrei sem saber nada, copiei o trader com melhor histórico e ainda no mesmo dia o dinheiro apareceu."</p><div class="tc-meta"><div><p class="tc-name">Júlia F.</p><p class="tc-loc">Cuidadora · Berlim 🇩🇪</p></div></div><div class="tc-badge">✓ Primeiro ganho no mesmo dia</div></article>
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"1 clique. Só isso. E no dia que entrei já tinha ganho em dólar. Ainda hoje não consigo acreditar que é tão simples."</p><div class="tc-meta"><div><p class="tc-name">Rafael T.</p><p class="tc-loc">Construção · Paris 🇫🇷</p></div></div><div class="tc-badge">✓ Ganhou no 1º dia · 1 clique</div></article>
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"Vi o histórico real do trader — resultados comprovados, não promessa. Entrei, copiei, e nas primeiras horas já tinha resultado."</p><div class="tc-meta"><div><p class="tc-name">Willian N.</p><p class="tc-loc">Warehouse · Amsterdam 🇳🇱</p></div></div><div class="tc-badge">✓ Resultado nas primeiras horas</div></article>
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"No mesmo dia fiz $140. Na semana seguinte mais $380. Agora nem lembro como era não ter essa renda extra."</p><div class="tc-meta"><div><p class="tc-name">Felipe M.</p><p class="tc-loc">Logística · Madrid 🇪🇸</p></div></div><div class="tc-badge">✓ $140 no 1º dia · $380 na semana</div></article>
+<article class="tc" aria-hidden="true"><div class="tc-stars">★★★★★</div><p class="tc-q">"No HubFloor você vê o histórico real, escolhe, copia. Simples assim. Ganhei ainda no dia em que entrei."</p><div class="tc-meta"><div><p class="tc-name">Augusto S.</p><p class="tc-loc">Serviços · Milão 🇮🇹</p></div></div><div class="tc-badge n">✓ Já havia tentado antes · ganhou hoje</div></article>
+</div>
+</div>
+</section>
+
+<!-- ══ PLANOS ══ -->
+<section id="planos">
+<div class="pl-wrap">
+
+<div class="pl-center">
+<div class="pl-head fade">
+<span class="s-label" style="display:block;text-align:center">ACESSO IMEDIATO</span>
+<h2 class="s-h2" style="text-align:center">COMECE HOJE<br><em>POR U$9,90.</em></h2>
+</div>
+
+<div style="text-align:center">
+<div class="slots fade">🔥 Apenas <strong style="margin:0 4px" id="sL2">47</strong> vagas nesse preço</div>
+</div>
+
+<div class="fade">
+<div class="plan">
+<div class="plan-badge">🔥 VAGAS LIMITADAS</div>
+<p class="plan-lbl">Plano Mensal</p>
+<p class="plan-was">U$19,90</p>
+<div class="plan-price"><span class="cur">U$</span><span class="int">9</span><span class="dec">,90</span></div>
+<p class="plan-per">/mês · sem fidelidade · cancele quando quiser</p>
+<ul class="plan-items">
+<li>Acesso imediato pelo celular</li>
+<li>100% de Autonomia — você escolhe quem e quando copiar</li>
+<li>Lives 24h por dia</li>
+<li>Treinamentos do iniciante ao avançado</li>
+<li>Torneios e prêmios</li>
+<li>🛡️ Garantia incondicional 7 dias</li>
+</ul>
+<button class="btn-plan easyt-next-page" onclick="oMod('mensal')">QUERO COMEÇAR — U$9,90 →</button>
+<p class="plan-lock">
+<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+Compra segura · Garantia 7 dias
+</p>
+</div>
+</div>
+</div><!-- /pl-center -->
+
+<div class="gar fade">
+<img src="/img/garantia-HUB.svg" alt="Garantia 7 dias" width="120" height="120" loading="lazy" style="flex-shrink:0">
+<div>
+<h3>GARANTIA INCONDICIONAL <span>7 DIAS</span></h3>
+<p>Se nos primeiros 7 dias não estiver satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+<p class="aviso">⚠️ <strong style="color:rgba(255,255,255,.7)">Aviso:</strong> Para ativar a função Copy, é necessário seguir os passos indicados dentro do app.</p>
+</div>
+</div>
+
+<div class="faq-wrap fade">
+<h3 class="fq-title">DÚVIDAS<br><em>FREQUENTES.</em></h3>
+<div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Preciso entender de mercado financeiro?</span><span class="faq-ic">+</span></button><div class="faq-a">O HubFloor foi criado para quem <strong>nunca teve contato com mercado financeiro</strong>. Você recebe a informação já processada por profissionais com histórico verificado.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Como sei que os profissionais são confiáveis?</span><span class="faq-ic">+</span></button><div class="faq-a">Todo profissional tem <strong>histórico verificado e público</strong>. Antes de qualquer decisão, você vê o desempenho real — taxa de acerto, estratégia, resultados.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Vai tomar muito do meu tempo?</span><span class="faq-ic">+</span></button><div class="faq-a">A plataforma foi construída <strong>para quem vive ocupado</strong>. O sinal chega no celular — você decide em segundos. A rotina continua igual.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Funciona para quem está na Europa?</span><span class="faq-ic">+</span></button><div class="faq-a">Sim, totalmente. Acesso de qualquer país da Europa. Suporte em português. <strong>Foi pensado para quem está aqui.</strong></div></div>
+<div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>E se quiser cancelar nos primeiros dias?</span><span class="faq-ic">+</span></button><div class="faq-a"><strong>7 dias de garantia total e incondicional.</strong> Se por qualquer motivo quiser sair, devolvemos 100% do valor pago. Sem burocracia.</div></div>
+</div>
+
+</div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+<div class="ft-inner">
+<div class="ft-top">
+<img src="/img/HubFloor_Horizontal_White.svg" alt="HubFloor" width="100" height="26" loading="lazy" style="height:24px;width:auto">
+<div class="ft-links">
+<a href="https://hubfloor.online/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidade</a>
+<a href="https://hubfloor.online/termos.html" target="_blank" rel="noopener">Termo de Autorização</a>
+<a href="https://hubfloor.online/contato.html" target="_blank" rel="noopener">Contato</a>
+<a href="https://hubfloor.online/termos-de-uso.html" target="_blank" rel="noopener">Termos de Uso</a>
+</div>
+</div>
+<p class="ft-body">A HubFloor atua como provedora de tecnologia e infraestrutura digital, disponibilizando ferramentas, ambientes virtuais, fluxos de informação e recursos voltados à recepção, organização, envio e análise de informações relacionadas a mercados e atividades de negociação, sempre com base exclusiva nas decisões individuais dos Usuários.</p>
+
+<p class="ft-body">2026 Comercio Cruz Hb Alimentos LTDA | CNPJ: 20.069.257/0001-07
+PRAÇA SENADOR TEMISTOCLES, 612, CENTRO, CRUZ DAS ALMAS – BA, 44380-000 </p>
+
+<address class="ft-addr">TSA Capital Holding Ltd – REGISTRO 2047185 · Palm Grove House, P.O. Box 438, Road Town, Tortola, VG1110, BVI · HUBFLOOR © Todos os direitos reservados</address>
+</div>
+</footer>
+
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast">
+<div class="t-icon">💵</div>
+<div class="t-body">
+<div class="t-name"><span class="t-check">✔</span><span id="tName">Diego C.</span></div>
+<div class="t-val" id="tVal">+U$228</div>
+<div class="ttime" id="tTime">há 2 min</div>
+</div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div class="mov" id="mov" role="dialog" aria-modal="true" aria-labelledby="mh">
+<div class="mbox">
+<button class="mx" onclick="cMod()" aria-label="Fechar">✕</button>
+<h2 class="mh" id="mh">SEU 1º GANHO AINDA HOJE</h2>
+<div class="mp"><div class="mpb" id="mpb"></div></div>
+<div class="fg"><label for="fn">Nome</label><input type="text" id="fn" placeholder="Seu nome completo" autocomplete="given-name" oninput="uP()"></div>
+<div class="fg"><label for="fe">E-mail</label><input type="email" id="fe" placeholder="seu@email.com" autocomplete="email" oninput="uP()"></div>
+<div class="fg"><label>WhatsApp</label>
+<div class="ph-wrap">
+<input type="hidden" id="fcc" value="+351">
+<div class="ddi-wrap" id="ddiWrap">
+<button type="button" class="ddi-btn" id="ddiBtn" onclick="tgDdi()" aria-label="Selecionar código do país">
+<span id="ddiLabel">🇵🇹 +351</span>
+<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+</button>
+<div class="ddi-drop" id="ddiDrop">
+<input type="text" class="ddi-search" id="ddiSearch" placeholder="Buscar..." oninput="filterDdi(this.value)" autocomplete="off">
+<div class="ddi-list" id="ddiList"></div>
+</div>
+</div>
+<input type="tel" id="fp" class="ph-input" placeholder="Seu número" autocomplete="tel" oninput="uP()">
+</div>
+</div>
+<button class="bsub easyt-next-page" id="bsub" onclick="sub()">QUERO MEU ACESSO AGORA →</button>
+<p class="mdisc">Ao se inscrever, você concorda com nossa <a href="https://hubfloor.app/privacy-policy" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
+</div>
+</div>
+
 <script>
-  (function() {
-    setTimeout(function() {
-      const s = document.getElementById('cloaker-shield');
-      if (s) {
-        s.style.opacity = '0';
-        setTimeout(function() { s.remove(); document.body.style.overflow = 'auto'; }, 800);
-      }
-    }, 2800);
-  })();
+// COUNTDOWN
+(function(){
+var k='hf_eu_cd3',s=sessionStorage.getItem(k),e=s?parseInt(s):Date.now()+30*60*1000;
+if(!s)sessionStorage.setItem(k,e);
+function t(){var l=Math.max(0,e-Date.now()),m=Math.floor(l/60000),sc=Math.floor((l%60000)/1000);
+var cdEl=document.getElementById('cd');if(cdEl)cdEl.textContent=(m<10?'0':'')+m+':'+(sc<10?'0':'')+sc;if(l>0)setTimeout(t,1000);}
+t();
+})();
+
+// SLOTS
+var slotsVal=(function(){
+var k='hf_eu_sl3',v=parseInt(sessionStorage.getItem(k)||'47');
+sessionStorage.setItem(k,v);return v;
+})();
+function updateSlots(){document.querySelectorAll('#sL,#sL2,#sLExit').forEach(function(el){el.textContent=slotsVal;});}
+function decrementSlot(){
+if(slotsVal>8){slotsVal--;sessionStorage.setItem('hf_eu_sl3',slotsVal);updateSlots();
+document.querySelectorAll('#sL,#sL2').forEach(function(el){el.style.color='#ff4444';setTimeout(function(){el.style.color='';},800);});
+}
+}
+updateSlots();
+(function decay(){if(Math.random()<0.35)decrementSlot();setTimeout(decay,Math.random()*55000+35000);})();
+
+// MODAL
+var HM={mensal:'https://pay.hotmart.com/O104309593K?checkoutMode=10',semestral:'https://pay.hotmart.com/O104309593K?checkoutMode=10&off=owk6k8ya&bid=1772287134486'};
+function buildHotmart(base,n,e){
+  var p=new URLSearchParams(window.location.search);
+  var src=p.get('utm_source')||'';
+  var cmp=p.get('utm_campaign')||'';
+  var med=p.get('utm_medium')||'';
+  var cnt=p.get('utm_content')||'';
+  var ref=p.get('ref')||p.get('utm_source')||'';
+  var pid=p.get('pid')||'';
+  var lid=p.get('lid')||'';
+  var sck=src+'|'+cmp+'|'+med+'|'+cnt+'|ref='+ref+'|pid='+pid+'|lid='+lid;
+  var u=new URL(base);
+  u.searchParams.set('sck',sck);
+  u.searchParams.set('xcod',e||'');
+  u.searchParams.set('email',e||'');
+  u.searchParams.set('name',n||'');
+  return u.toString();
+}
+window.oMod=function(plan){
+var m=document.getElementById('mov');m.dataset.plan=plan;
+document.getElementById('mpb').style.width='30%';m.classList.add('open');
+document.getElementById('fn').focus();
+};
+window.cMod=function(){document.getElementById('mov').classList.remove('open');};
+document.getElementById('mov').addEventListener('click',function(e){if(e.target===this)cMod();});
+
+// FORM VALIDATION
+var CTRS=[
+{cc:'+44',min:10,max:10},{cc:'+55',min:10,max:11},{cc:'+1',min:10,max:10},
+{cc:'+351',min:9,max:9},{cc:'+34',min:9,max:9},{cc:'+33',min:9,max:9},
+{cc:'+49',min:10,max:11},{cc:'+39',min:9,max:10},{cc:'+31',min:9,max:9},
+{cc:'+41',min:9,max:9},{cc:'+32',min:8,max:9},{cc:'+43',min:7,max:13},
+{cc:'+46',min:7,max:9},{cc:'+47',min:8,max:8},{cc:'+45',min:8,max:8},
+{cc:'+358',min:6,max:10},{cc:'+353',min:7,max:9},{cc:'+48',min:9,max:9},
+{cc:'+420',min:9,max:9},{cc:'+36',min:8,max:9},{cc:'+40',min:9,max:9},
+{cc:'+30',min:10,max:10},{cc:'+7',min:10,max:10},{cc:'+380',min:9,max:9},
+{cc:'+81',min:10,max:11},{cc:'+61',min:9,max:9},{cc:'+65',min:8,max:8},
+{cc:'+60',min:9,max:10},{cc:'+86',min:11,max:11},{cc:'+82',min:9,max:10},
+{cc:'+91',min:10,max:10},{cc:'+971',min:9,max:9},{cc:'+90',min:10,max:10},
+{cc:'+27',min:9,max:9},{cc:'+234',min:10,max:10},{cc:'+254',min:9,max:9},
+{cc:'+52',min:10,max:10},{cc:'+54',min:10,max:10},{cc:'+57',min:10,max:10},
+{cc:'+56',min:9,max:9},{cc:'+51',min:9,max:9},{cc:'+58',min:10,max:10},
+{cc:'+598',min:8,max:8}
+];
+function getCTR(cc){for(var i=0;i<CTRS.length;i++)if(CTRS[i].cc===cc)return CTRS[i];return null;}
+function cleanNum(v){return v.replace(/\D/g,'');}
+function validPhone(num,cc){var r=getCTR(cc);if(!r)return num.length>=7&&num.length<=15;return num.length>=r.min&&num.length<=r.max;}
+window.uP=function(){
+var n=document.getElementById('fn').value.trim();
+var e=document.getElementById('fe').value.trim();
+var p=cleanNum(document.getElementById('fp').value);
+var cc=document.getElementById('fcc').value;
+var ok=n.length>1&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)&&validPhone(p,cc);
+document.getElementById('bsub').disabled=!ok;
+document.getElementById('mpb').style.width=ok?'100%':n&&e?'65%':'30%';
+};
+var utms=(function(){
+var p=new URLSearchParams(window.location.search);
+return{utm_source:p.get('utm_source')||'',utm_campaign:p.get('utm_campaign')||'',utm_medium:p.get('utm_medium')||'',utm_content:p.get('utm_content')||'',pid:p.get('pid')||'',lid:p.get('lid')||'',ref:p.get('ref')||'',o:p.get('o')||''};
+})();
+window.sub=function(){
+var n=document.getElementById('fn').value.trim();
+var e=document.getElementById('fe').value.trim();
+var p=cleanNum(document.getElementById('fp').value);
+var cc=document.getElementById('fcc').value;
+if(!n||!e||!validPhone(p,cc)){
+['fn','fe','fp'].forEach(function(id){var el=document.getElementById(id);if(!el.value.trim())el.classList.add('err');});
+return;
+}
+var plan=document.getElementById('mov').dataset.plan||'mensal';
+document.getElementById('z_nome').value=n;
+document.getElementById('z_email').value=e;
+document.getElementById('z_telefone').value=cc+p;
+document.getElementById('z_plano').value=plan;
+document.getElementById('z_utm_source').value=utms.utm_source;
+document.getElementById('z_utm_campaign').value=utms.utm_campaign;
+document.getElementById('z_utm_medium').value=utms.utm_medium;
+document.getElementById('z_utm_content').value=utms.utm_content;
+document.getElementById('z_pid').value=utms.pid;
+document.getElementById('z_lid').value=utms.lid;
+document.getElementById('z_ref').value=utms.ref;
+document.getElementById('z_o').value=utms.o;
+document.getElementById('z_url').value=window.location.href;
+document.getElementById('zapForm').submit();
+setTimeout(function(){window.location.href=buildHotmart(HM[plan],n,e);},400);
+};
+
+// TOAST
+var tEntries=[
+{name:'Diego C. 🇩🇪',val:'+U$228'},{name:'Marcos A. 🇵🇹',val:'+U$87'},
+{name:'Felipe M. 🇪🇸',val:'+U$380'},{name:'Júlia F. 🇩🇪',val:'+U$143'},
+{name:'Rafael T. 🇫🇷',val:'+U$312'},{name:'Willian N. 🇳🇱',val:'+U$196'},
+{name:'Camila S. 🇨🇭',val:'+U$540'},{name:'Bruno L. 🇬🇧',val:'+U$267'},
+{name:'Patrícia R. 🇧🇪',val:'+U$418'},{name:'Thiago M. 🇦🇹',val:'+U$155'},
+{name:'Luciana V. 🇮🇪',val:'+U$730'},{name:'Carlos O. 🇸🇪',val:'+U$92'},
+];
+var tTimes=['há 2 min','há 4 min','há 7 min','agora mesmo','há 3 min','há 1 min'];
+function shT(){
+var el=document.getElementById('toast');
+var e=tEntries[Math.floor(Math.random()*tEntries.length)];
+document.getElementById('tName').textContent=e.name;
+document.getElementById('tVal').textContent=e.val;
+document.getElementById('tTime').textContent=tTimes[Math.floor(Math.random()*tTimes.length)];
+el.classList.add('show');
+setTimeout(function(){el.classList.remove('show');},5500);
+setTimeout(shT,Math.random()*18000+13000);
+}
+setTimeout(shT,8000);
+
+// MODAL SOCIAL
+var ms=['3 brasileiros na Europa entraram hoje','Acesso ativo agora em Lisboa e Berlim','2 pessoas acabaram de se inscrever'];
+var mi=0;setInterval(function(){mi=(mi+1)%ms.length;var el=document.getElementById('msc');if(el)el.textContent=ms[mi];},12000);
+
+// FAQ
+window.tgF=function(btn){var it=btn.closest('.faq-item'),was=it.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!was)it.classList.add('open');};
+
+// FADE
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:.06});
+document.querySelectorAll('.fade').forEach(function(el){obs.observe(el);});
+setTimeout(function(){document.querySelectorAll('#hero .fade').forEach(function(el){el.classList.add('on');});},80);
+
+// DDI
+var DDI_DATA=[
+{f:'🇬🇧',c:'+44'},{f:'🇧🇷',c:'+55'},{f:'🇺🇸',c:'+1'},{f:'🇵🇹',c:'+351'},
+{f:'🇪🇸',c:'+34'},{f:'🇫🇷',c:'+33'},{f:'🇩🇪',c:'+49'},{f:'🇮🇹',c:'+39'},
+{f:'🇳🇱',c:'+31'},{f:'🇨🇭',c:'+41'},{f:'🇧🇪',c:'+32'},{f:'🇦🇹',c:'+43'},
+{f:'🇸🇪',c:'+46'},{f:'🇳🇴',c:'+47'},{f:'🇩🇰',c:'+45'},{f:'🇫🇮',c:'+358'},
+{f:'🇮🇪',c:'+353'},{f:'🇵🇱',c:'+48'},{f:'🇨🇿',c:'+420'},{f:'🇭🇺',c:'+36'},
+{f:'🇷🇴',c:'+40'},{f:'🇬🇷',c:'+30'},{f:'🇷🇺',c:'+7'},{f:'🇺🇦',c:'+380'},
+{f:'🇯🇵',c:'+81'},{f:'🇦🇺',c:'+61'},{f:'🇸🇬',c:'+65'},{f:'🇲🇾',c:'+60'},
+{f:'🇨🇳',c:'+86'},{f:'🇰🇷',c:'+82'},{f:'🇮🇳',c:'+91'},{f:'🇦🇪',c:'+971'},
+{f:'🇹🇷',c:'+90'},{f:'🇿🇦',c:'+27'},{f:'🇳🇬',c:'+234'},{f:'🇰🇪',c:'+254'},
+{f:'🇲🇽',c:'+52'},{f:'🇦🇷',c:'+54'},{f:'🇨🇴',c:'+57'},{f:'🇨🇱',c:'+56'},
+{f:'🇵🇪',c:'+51'},{f:'🇻🇪',c:'+58'},{f:'🇺🇾',c:'+598'}
+];
+var ddiFiltered=DDI_DATA.slice();
+function renderDdi(list){
+ddiFiltered=list;
+var el=document.getElementById('ddiList'),html='';
+for(var i=0;i<list.length;i++)html+='<div class="ddi-opt" data-i="'+i+'">'+list[i].f+' '+list[i].c+'</div>';
+el.innerHTML=html;
+el.querySelectorAll('.ddi-opt').forEach(function(opt){opt.addEventListener('click',function(){var d=ddiFiltered[parseInt(this.getAttribute('data-i'))];selDdi(d.f,d.c);});});
+}
+renderDdi(DDI_DATA);
+window.filterDdi=function(q){q=q.trim().toLowerCase();renderDdi(q?DDI_DATA.filter(function(d){return d.c.includes(q);}):DDI_DATA);};
+window.selDdi=function(flag,code){
+document.getElementById('fcc').value=code;document.getElementById('ddiLabel').textContent=flag+' '+code;
+document.getElementById('ddiDrop').classList.remove('open');document.getElementById('ddiBtn').classList.remove('open');
+document.getElementById('ddiSearch').value='';renderDdi(DDI_DATA);uP();
+};
+window.tgDdi=function(){
+var drop=document.getElementById('ddiDrop'),btn=document.getElementById('ddiBtn'),isOpen=drop.classList.contains('open');
+drop.classList.toggle('open');btn.classList.toggle('open');
+if(!isOpen)setTimeout(function(){document.getElementById('ddiSearch').focus();},50);
+};
+document.addEventListener('click',function(e){var w=document.getElementById('ddiWrap');if(w&&!w.contains(e.target)){document.getElementById('ddiDrop').classList.remove('open');document.getElementById('ddiBtn').classList.remove('open');}});
+
+// GEO
+if(document.readyState==='complete'){setTimeout(function(){fetch('https://ipapi.co/json/').catch(function(){});},300);}
+else{window.addEventListener('load',function(){setTimeout(function(){fetch('https://ipapi.co/json/').catch(function(){});},300);});}
 </script>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BCDGKX6" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-
-  <!-- Zapier form -->
-  <iframe name="zap_frame" style="display:none" aria-hidden="true"></iframe>
-  <form id="zapForm" action="https://hooks.zapier.com/hooks/catch/1535394/ux4ovvx/" method="POST" target="zap_frame"
-    style="display:none" aria-hidden="true">
-    <input type="hidden" name="nome" id="z_nome">
-    <input type="hidden" name="email" id="z_email">
-    <input type="hidden" name="telefone" id="z_telefone">
-    <input type="hidden" name="plano" id="z_plano">
-    <input type="hidden" name="origem" value="euv4">
-    <input type="hidden" name="pais" value="EU">
-    <input type="hidden" name="utm_source" id="z_utm_source">
-    <input type="hidden" name="utm_campaign" id="z_utm_campaign">
-    <input type="hidden" name="utm_medium" id="z_utm_medium">
-    <input type="hidden" name="utm_content" id="z_utm_content">
-    <input type="hidden" name="pid" id="z_pid">
-    <input type="hidden" name="lid" id="z_lid">
-    <input type="hidden" name="ref" id="z_ref">
-    <input type="hidden" name="o" id="z_o">
-    <input type="hidden" name="url_pagina" id="z_url">
-  </form>
-
-  <!-- ══ HERO ══ -->
-  <section id="hero">
-    <div class="h-wrap">
-
-      <div class="fade">
-        <div class="h-badge">
-          <span aria-hidden="true">🔴</span>
-          <span class="h-badge-txt">SEGREDO REVELADO</span>
-          <span aria-hidden="true">🔴</span>
-        </div>
-      </div>
-
-
-      <img src="/img/headline.png" alt="Headline" style="max-width: 100%; height: auto;">
-
-
-
-      <div class="h-vid fade">
-        <div class="h-vid-r">
-          <smart-player style="display:block;margin:0 auto;width:100%"></smart-player>
-        </div>
-      </div>
-
-      <div class="h-box fade">
-        <p>Faça <strong>renda em dólar (de casa)</strong> online, de qualquer lugar do mundo com <strong>apenas 1
-            clique, 24h por dia, copiando profissionais.</strong></p>
-        <p class="ps">⚡ Ps: Seu 1º Ganho ocorrerá ainda hoje!</p>
-      </div>
-
-      <div class="h-cta fade">
-        <button class="btn-main easyt-next-page" onclick="oMod('mensal')">
-          QUERO MEU 1º GANHO HOJE
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ OQ É ══ -->
-  <section id="oq">
-    <div class="s-wrap">
-      <div class="oq-head fade">
-
-        <img src=/img/headline2.png alt="Headline" style="max-width: 100%; height: auto;">>
-
-      </div>
-
-      <div class="oq-body">
-        <div class="oq-img-col fade">
-          <img src="/img/hubfloor_app2.webp" alt="HubFloor App" class="oq-img" loading="lazy" width="360" height="640"
-            style="object-fit:contain;object-position:center">
-        </div>
-        <div class="oq-feats fade">
-          <div class="oq-feat">
-            <span class="oq-feat-ic">💰</span>
-            <div>
-              <h3 class="oq-feat-h">RENDA EM DÓLAR ONLINE</h3>
-              <p class="oq-feat-p">De casa, de qualquer lugar do mundo. 24 horas por dia. Sem depender de ninguém.</p>
-            </div>
-          </div>
-          <div class="oq-feat">
-            <span class="oq-feat-ic">📲</span>
-            <div>
-              <h3 class="oq-feat-h">APENAS 1 CLIQUE</h3>
-              <p class="oq-feat-p">Receba o sinal e copie com 1 clique. Sem estudar, sem gráfico, sem experiência
-                prévia.</p>
-            </div>
-          </div>
-          <div class="oq-feat">
-            <span class="oq-feat-ic">🚀</span>
-            <div>
-              <h3 class="oq-feat-h">CENTENAS DE MILHARES</h3>
-              <p class="oq-feat-p">Copie profissionais que já fazem milhões ao mês — investindo menos que um cafezinho
-                da Starbucks.</p>
-            </div>
-          </div>
-          <div class="oq-feat">
-            <span class="oq-feat-ic">🛡</span>
-            <div>
-              <h3 class="oq-feat-h">GARANTIA 7 DIAS</h3>
-              <p class="oq-feat-p">Teste sem risco. Se não gostar, devolvemos 100% — sem perguntas, sem burocracia.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="oq-bar fade">
-        <div class="oq-bar-t">SEU 1º GANHO<br><em>AINDA HOJE.</em></div>
-        <p class="oq-bar-p">Sem curso, sem esperar, sem anos de estudo. Você só copia os profissionais. Simples assim.
-        </p>
-        <button class="btn-sec easyt-next-page" onclick="oMod('mensal')">
-          COMECE AGORA
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ DEPOIMENTOS ══ -->
-  <section id="depos">
-    <div class="depos-hd fade">
-      <p class="s-label">Quem deu o próximo passo</p>
-      <h2 class="s-h2">JÁ ESTÁ LUCRANDO<br><em>COM O HUBFLOOR.</em></h2>
-    </div>
-    <div class="tc-wrap">
-      <div class="tc-track">
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Nunca tinha investido nada na vida. Copiei 1 profissional, 1 clique. No mesmo dia já tinha
-            $87 na conta. Fiquei olhando a tela sem acreditar."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Marcos A.</p>
-              <p class="tc-loc">Care worker · Lisboa 🇵🇹</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ $87 no 1º dia · do zero</div>
-        </article>
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Achei que era pra quem entende de mercado. Entrei sem saber nada, copiei o trader com melhor
-            histórico e ainda no mesmo dia o dinheiro apareceu. Mandei print pro meu marido."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Júlia F.</p>
-              <p class="tc-loc">Cuidadora · Berlim 🇩🇪</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Primeiro ganho no mesmo dia</div>
-        </article>
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Saio do trabalho destruído, não tenho energia pra aprender nada. 1 clique. Só isso. E no dia
-            que entrei já tinha ganho em dólar. Ainda hoje não consigo acreditar que é tão simples."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Rafael T.</p>
-              <p class="tc-loc">Construção · Paris 🇫🇷</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Ganhou no 1º dia · 1 clique</div>
-        </article>
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Já perdi dinheiro tentando sozinho antes. Desta vez vi o histórico real do trader —
-            resultados comprovados, não promessa. Entrei, copiei, e nas primeiras horas já tinha resultado."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Willian N.</p>
-              <p class="tc-loc">Warehouse · Amsterdam 🇳🇱</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Resultado nas primeiras horas</div>
-        </article>
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Pensei: U$9,90 não vai fazer nada. Entrei só pra ver. No mesmo dia fiz $140. Na semana
-            seguinte mais $380. Agora nem lembro como era não ter essa renda extra."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Felipe M.</p>
-              <p class="tc-loc">Logística · Madrid 🇪🇸</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ $140 no 1º dia · $380 na semana</div>
-        </article>
-        <article class="tc">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Tentei vários apps antes e nunca deu certo. No HubFloor é diferente — você vê o histórico
-            real, escolhe, copia. Simples assim. Ganhei ainda no dia em que entrei."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Augusto S.</p>
-              <p class="tc-loc">Serviços · Milão 🇮🇹</p>
-            </div>
-          </div>
-          <div class="tc-badge n">✓ Já havia tentado antes · ganhou hoje</div>
-        </article>
-        <!-- clones -->
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Nunca tinha investido nada na vida. Copiei 1 profissional, 1 clique. No mesmo dia já tinha
-            $87 na conta."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Marcos A.</p>
-              <p class="tc-loc">Care worker · Lisboa 🇵🇹</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ $87 no 1º dia · do zero</div>
-        </article>
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Entrei sem saber nada, copiei o trader com melhor histórico e ainda no mesmo dia o dinheiro
-            apareceu."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Júlia F.</p>
-              <p class="tc-loc">Cuidadora · Berlim 🇩🇪</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Primeiro ganho no mesmo dia</div>
-        </article>
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"1 clique. Só isso. E no dia que entrei já tinha ganho em dólar. Ainda hoje não consigo
-            acreditar que é tão simples."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Rafael T.</p>
-              <p class="tc-loc">Construção · Paris 🇫🇷</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Ganhou no 1º dia · 1 clique</div>
-        </article>
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"Vi o histórico real do trader — resultados comprovados, não promessa. Entrei, copiei, e nas
-            primeiras horas já tinha resultado."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Willian N.</p>
-              <p class="tc-loc">Warehouse · Amsterdam 🇳🇱</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ Resultado nas primeiras horas</div>
-        </article>
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"No mesmo dia fiz $140. Na semana seguinte mais $380. Agora nem lembro como era não ter essa
-            renda extra."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Felipe M.</p>
-              <p class="tc-loc">Logística · Madrid 🇪🇸</p>
-            </div>
-          </div>
-          <div class="tc-badge">✓ $140 no 1º dia · $380 na semana</div>
-        </article>
-        <article class="tc" aria-hidden="true">
-          <div class="tc-stars">★★★★★</div>
-          <p class="tc-q">"No HubFloor você vê o histórico real, escolhe, copia. Simples assim. Ganhei ainda no dia em
-            que entrei."</p>
-          <div class="tc-meta">
-            <div>
-              <p class="tc-name">Augusto S.</p>
-              <p class="tc-loc">Serviços · Milão 🇮🇹</p>
-            </div>
-          </div>
-          <div class="tc-badge n">✓ Já havia tentado antes · ganhou hoje</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ PLANOS ══ -->
-  <section id="planos">
-    <div class="pl-wrap">
-
-      <div class="pl-center">
-        <div class="pl-head fade">
-          <span class="s-label" style="display:block;text-align:center">ACESSO IMEDIATO</span>
-          <h2 class="s-h2" style="text-align:center">COMECE HOJE<br><em>POR U$9,90.</em></h2>
-        </div>
-
-        <div style="text-align:center">
-          <div class="slots fade">🔥 Apenas <strong style="margin:0 4px" id="sL2">47</strong> vagas nesse preço</div>
-        </div>
-
-        <div class="fade">
-          <div class="plan">
-            <div class="plan-badge">🔥 VAGAS LIMITADAS</div>
-            <p class="plan-lbl">Plano Mensal</p>
-            <p class="plan-was">U$19,90</p>
-            <div class="plan-price"><span class="cur">U$</span><span class="int">9</span><span class="dec">,90</span>
-            </div>
-            <p class="plan-per">/mês · sem fidelidade · cancele quando quiser</p>
-            <ul class="plan-items">
-              <li>Acesso imediato pelo celular</li>
-              <li>100% de Autonomia — você escolhe quem e quando copiar</li>
-              <li>Lives 24h por dia</li>
-              <li>Treinamentos do iniciante ao avançado</li>
-              <li>Torneios e prêmios</li>
-              <li>🛡️ Garantia incondicional 7 dias</li>
-            </ul>
-            <button class="btn-plan easyt-next-page" onclick="oMod('mensal')">QUERO COMEÇAR — U$9,90 →</button>
-            <p class="plan-lock">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-              Compra segura · Garantia 7 dias
-            </p>
-          </div>
-        </div>
-      </div><!-- /pl-center -->
-
-      <div class="gar fade">
-        <img src="/img/garantia-HUB.svg" alt="Garantia 7 dias" width="120" height="120" loading="lazy"
-          style="flex-shrink:0">
-        <div>
-          <h3>GARANTIA INCONDICIONAL <span>7 DIAS</span></h3>
-          <p>Se nos primeiros 7 dias não estiver satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro. Sem
-            perguntas, sem burocracia.</p>
-          <p class="aviso">⚠️ <strong style="color:rgba(255,255,255,.7)">Aviso:</strong> Para ativar a função Copy, é
-            necessário seguir os passos indicados dentro do app.</p>
-        </div>
-      </div>
-
-      <div class="faq-wrap fade">
-        <h3 class="fq-title">DÚVIDAS<br><em>FREQUENTES.</em></h3>
-        <div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Preciso entender de mercado
-              financeiro?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a">O HubFloor foi criado para quem <strong>nunca teve contato com mercado financeiro</strong>.
-            Você recebe a informação já processada por profissionais com histórico verificado.</div>
-        </div>
-        <div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Como sei que os profissionais são
-              confiáveis?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a">Todo profissional tem <strong>histórico verificado e público</strong>. Antes de qualquer
-            decisão, você vê o desempenho real — taxa de acerto, estratégia, resultados.</div>
-        </div>
-        <div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Vai tomar muito do meu tempo?</span><span
-              class="faq-ic">+</span></button>
-          <div class="faq-a">A plataforma foi construída <strong>para quem vive ocupado</strong>. O sinal chega no
-            celular — você decide em segundos. A rotina continua igual.</div>
-        </div>
-        <div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>Funciona para quem está na
-              Europa?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a">Sim, totalmente. Acesso de qualquer país da Europa. Suporte em português. <strong>Foi
-              pensado para quem está aqui.</strong></div>
-        </div>
-        <div class="faq-item"><button class="faq-q" onclick="tgF(this)"><span>E se quiser cancelar nos primeiros
-              dias?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a"><strong>7 dias de garantia total e incondicional.</strong> Se por qualquer motivo quiser
-            sair, devolvemos 100% do valor pago. Sem burocracia.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ FOOTER ══ -->
-  <footer>
-    <div class="ft-inner">
-      <div class="ft-top">
-        <img src="/img/HubFloor_Horizontal_White.svg" alt="HubFloor" width="100" height="26" loading="lazy"
-          style="height:24px;width:auto">
-        <div class="ft-links">
-          <a href="https://hubfloor.online/privacy-policy.html" target="_blank" rel="noopener">Política de
-            Privacidade</a>
-          <a href="https://hubfloor.online/termos.html" target="_blank" rel="noopener">Termo de Autorização</a>
-          <a href="https://hubfloor.online/contato.html" target="_blank" rel="noopener">Contato</a>
-          <a href="https://hubfloor.online/termos-de-uso.html" target="_blank" rel="noopener">Termos de Uso</a>
-        </div>
-      </div>
-      <p class="ft-body">A HubFloor atua como provedora de tecnologia e infraestrutura digital, disponibilizando
-        ferramentas, ambientes virtuais, fluxos de informação e recursos voltados à recepção, organização, envio e
-        análise de informações relacionadas a mercados e atividades de negociação, sempre com base exclusiva nas
-        decisões individuais dos Usuários.</p>
-
-      <p class="ft-body">2026 Nutritime LTDA | CNPJ: 05.795.447/0001-18
-        Praca Do Rosario, 01, Centro, Viçosa – MG, 36570-001 </p>
-
-      <address class="ft-addr">TSA Capital Holding Ltd – REGISTRO 2047185 · Palm Grove House, P.O. Box 438, Road Town,
-        Tortola, VG1110, BVI · HUBFLOOR © Todos os direitos reservados</address>
-    </div>
-  </footer>
-
-  <!-- ══ TOAST ══ -->
-  <div class="toast" id="toast">
-    <div class="t-icon">💵</div>
-    <div class="t-body">
-      <div class="t-name"><span class="t-check">✔</span><span id="tName">Diego C.</span></div>
-      <div class="t-val" id="tVal">+U$228</div>
-      <div class="ttime" id="tTime">há 2 min</div>
-    </div>
-  </div>
-
-  <!-- ══ MODAL ══ -->
-  <div class="mov" id="mov" role="dialog" aria-modal="true" aria-labelledby="mh">
-    <div class="mbox">
-      <button class="mx" onclick="cMod()" aria-label="Fechar">✕</button>
-      <h2 class="mh" id="mh">SEU 1º GANHO AINDA HOJE</h2>
-      <div class="mp">
-        <div class="mpb" id="mpb"></div>
-      </div>
-      <div class="fg"><label for="fn">Nome</label><input type="text" id="fn" placeholder="Seu nome completo"
-          autocomplete="given-name" oninput="uP()"></div>
-      <div class="fg"><label for="fe">E-mail</label><input type="email" id="fe" placeholder="seu@email.com"
-          autocomplete="email" oninput="uP()"></div>
-      <div class="fg"><label>WhatsApp</label>
-        <div class="ph-wrap">
-          <input type="hidden" id="fcc" value="+351">
-          <div class="ddi-wrap" id="ddiWrap">
-            <button type="button" class="ddi-btn" id="ddiBtn" onclick="tgDdi()" aria-label="Selecionar código do país">
-              <span id="ddiLabel">🇵🇹 +351</span>
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                aria-hidden="true">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="ddi-drop" id="ddiDrop">
-              <input type="text" class="ddi-search" id="ddiSearch" placeholder="Buscar..."
-                oninput="filterDdi(this.value)" autocomplete="off">
-              <div class="ddi-list" id="ddiList"></div>
-            </div>
-          </div>
-          <input type="tel" id="fp" class="ph-input" placeholder="Seu número" autocomplete="tel" oninput="uP()">
-        </div>
-      </div>
-      <button class="bsub easyt-next-page" id="bsub" onclick="sub()">QUERO MEU ACESSO AGORA →</button>
-      <p class="mdisc">Ao se inscrever, você concorda com nossa <a href="https://hubfloor.app/privacy-policy"
-          target="_blank" rel="noopener">Política de Privacidade</a>.</p>
-    </div>
-  </div>
-
-  <script>
-    // COUNTDOWN
-    (function () {
-      var k = 'hf_eu_cd3', s = sessionStorage.getItem(k), e = s ? parseInt(s) : Date.now() + 30 * 60 * 1000;
-      if (!s) sessionStorage.setItem(k, e);
-      function t() {
-        var l = Math.max(0, e - Date.now()), m = Math.floor(l / 60000), sc = Math.floor((l % 60000) / 1000);
-        var cdEl = document.getElementById('cd'); if (cdEl) cdEl.textContent = (m < 10 ? '0' : '') + m + ':' + (sc < 10 ? '0' : '') + sc; if (l > 0) setTimeout(t, 1000);
-      }
-      t();
-    })();
-
-    // SLOTS
-    var slotsVal = (function () {
-      var k = 'hf_eu_sl3', v = parseInt(sessionStorage.getItem(k) || '47');
-      sessionStorage.setItem(k, v); return v;
-    })();
-    function updateSlots() { document.querySelectorAll('#sL,#sL2,#sLExit').forEach(function (el) { el.textContent = slotsVal; }); }
-    function decrementSlot() {
-      if (slotsVal > 8) {
-        slotsVal--; sessionStorage.setItem('hf_eu_sl3', slotsVal); updateSlots();
-        document.querySelectorAll('#sL,#sL2').forEach(function (el) { el.style.color = '#ff4444'; setTimeout(function () { el.style.color = ''; }, 800); });
-      }
-    }
-    updateSlots();
-    (function decay() { if (Math.random() < 0.35) decrementSlot(); setTimeout(decay, Math.random() * 55000 + 35000); })();
-
-    // MODAL
-    var HM = { mensal: 'https://pay.hotmart.com/O104309593K?checkoutMode=10', semestral: 'https://pay.hotmart.com/O104309593K?checkoutMode=10&off=owk6k8ya&bid=1772287134486' };
-    function buildHotmart(base, n, e) {
-      var p = new URLSearchParams(window.location.search);
-      var src = p.get('utm_source') || '';
-      var cmp = p.get('utm_campaign') || '';
-      var med = p.get('utm_medium') || '';
-      var cnt = p.get('utm_content') || '';
-      var ref = p.get('ref') || p.get('utm_source') || '';
-      var pid = p.get('pid') || '';
-      var lid = p.get('lid') || '';
-      var sck = src + '|' + cmp + '|' + med + '|' + cnt + '|ref=' + ref + '|pid=' + pid + '|lid=' + lid;
-      var u = new URL(base);
-      u.searchParams.set('sck', sck);
-      u.searchParams.set('xcod', e || '');
-      u.searchParams.set('email', e || '');
-      u.searchParams.set('name', n || '');
-      return u.toString();
-    }
-    window.oMod = function (plan) {
-      var m = document.getElementById('mov'); m.dataset.plan = plan;
-      document.getElementById('mpb').style.width = '30%'; m.classList.add('open');
-      document.getElementById('fn').focus();
-    };
-    window.cMod = function () { document.getElementById('mov').classList.remove('open'); };
-    document.getElementById('mov').addEventListener('click', function (e) { if (e.target === this) cMod(); });
-
-    // FORM VALIDATION
-    var CTRS = [
-      { cc: '+44', min: 10, max: 10 }, { cc: '+55', min: 10, max: 11 }, { cc: '+1', min: 10, max: 10 },
-      { cc: '+351', min: 9, max: 9 }, { cc: '+34', min: 9, max: 9 }, { cc: '+33', min: 9, max: 9 },
-      { cc: '+49', min: 10, max: 11 }, { cc: '+39', min: 9, max: 10 }, { cc: '+31', min: 9, max: 9 },
-      { cc: '+41', min: 9, max: 9 }, { cc: '+32', min: 8, max: 9 }, { cc: '+43', min: 7, max: 13 },
-      { cc: '+46', min: 7, max: 9 }, { cc: '+47', min: 8, max: 8 }, { cc: '+45', min: 8, max: 8 },
-      { cc: '+358', min: 6, max: 10 }, { cc: '+353', min: 7, max: 9 }, { cc: '+48', min: 9, max: 9 },
-      { cc: '+420', min: 9, max: 9 }, { cc: '+36', min: 8, max: 9 }, { cc: '+40', min: 9, max: 9 },
-      { cc: '+30', min: 10, max: 10 }, { cc: '+7', min: 10, max: 10 }, { cc: '+380', min: 9, max: 9 },
-      { cc: '+81', min: 10, max: 11 }, { cc: '+61', min: 9, max: 9 }, { cc: '+65', min: 8, max: 8 },
-      { cc: '+60', min: 9, max: 10 }, { cc: '+86', min: 11, max: 11 }, { cc: '+82', min: 9, max: 10 },
-      { cc: '+91', min: 10, max: 10 }, { cc: '+971', min: 9, max: 9 }, { cc: '+90', min: 10, max: 10 },
-      { cc: '+27', min: 9, max: 9 }, { cc: '+234', min: 10, max: 10 }, { cc: '+254', min: 9, max: 9 },
-      { cc: '+52', min: 10, max: 10 }, { cc: '+54', min: 10, max: 10 }, { cc: '+57', min: 10, max: 10 },
-      { cc: '+56', min: 9, max: 9 }, { cc: '+51', min: 9, max: 9 }, { cc: '+58', min: 10, max: 10 },
-      { cc: '+598', min: 8, max: 8 }
-    ];
-    function getCTR(cc) { for (var i = 0; i < CTRS.length; i++)if (CTRS[i].cc === cc) return CTRS[i]; return null; }
-    function cleanNum(v) { return v.replace(/\D/g, ''); }
-    function validPhone(num, cc) { var r = getCTR(cc); if (!r) return num.length >= 7 && num.length <= 15; return num.length >= r.min && num.length <= r.max; }
-    window.uP = function () {
-      var n = document.getElementById('fn').value.trim();
-      var e = document.getElementById('fe').value.trim();
-      var p = cleanNum(document.getElementById('fp').value);
-      var cc = document.getElementById('fcc').value;
-      var ok = n.length > 1 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && validPhone(p, cc);
-      document.getElementById('bsub').disabled = !ok;
-      document.getElementById('mpb').style.width = ok ? '100%' : n && e ? '65%' : '30%';
-    };
-    var utms = (function () {
-      var p = new URLSearchParams(window.location.search);
-      return { utm_source: p.get('utm_source') || '', utm_campaign: p.get('utm_campaign') || '', utm_medium: p.get('utm_medium') || '', utm_content: p.get('utm_content') || '', pid: p.get('pid') || '', lid: p.get('lid') || '', ref: p.get('ref') || '', o: p.get('o') || '' };
-    })();
-    window.sub = function () {
-      var n = document.getElementById('fn').value.trim();
-      var e = document.getElementById('fe').value.trim();
-      var p = cleanNum(document.getElementById('fp').value);
-      var cc = document.getElementById('fcc').value;
-      if (!n || !e || !validPhone(p, cc)) {
-        ['fn', 'fe', 'fp'].forEach(function (id) { var el = document.getElementById(id); if (!el.value.trim()) el.classList.add('err'); });
-        return;
-      }
-      var plan = document.getElementById('mov').dataset.plan || 'mensal';
-      document.getElementById('z_nome').value = n;
-      document.getElementById('z_email').value = e;
-      document.getElementById('z_telefone').value = cc + p;
-      document.getElementById('z_plano').value = plan;
-      document.getElementById('z_utm_source').value = utms.utm_source;
-      document.getElementById('z_utm_campaign').value = utms.utm_campaign;
-      document.getElementById('z_utm_medium').value = utms.utm_medium;
-      document.getElementById('z_utm_content').value = utms.utm_content;
-      document.getElementById('z_pid').value = utms.pid;
-      document.getElementById('z_lid').value = utms.lid;
-      document.getElementById('z_ref').value = utms.ref;
-      document.getElementById('z_o').value = utms.o;
-      document.getElementById('z_url').value = window.location.href;
-      document.getElementById('zapForm').submit();
-      setTimeout(function () { window.location.href = buildHotmart(HM[plan], n, e); }, 400);
-    };
-
-    // TOAST
-    var tEntries = [
-      { name: 'Diego C. 🇩🇪', val: '+U$228' }, { name: 'Marcos A. 🇵🇹', val: '+U$87' },
-      { name: 'Felipe M. 🇪🇸', val: '+U$380' }, { name: 'Júlia F. 🇩🇪', val: '+U$143' },
-      { name: 'Rafael T. 🇫🇷', val: '+U$312' }, { name: 'Willian N. 🇳🇱', val: '+U$196' },
-      { name: 'Camila S. 🇨🇭', val: '+U$540' }, { name: 'Bruno L. 🇬🇧', val: '+U$267' },
-      { name: 'Patrícia R. 🇧🇪', val: '+U$418' }, { name: 'Thiago M. 🇦🇹', val: '+U$155' },
-      { name: 'Luciana V. 🇮🇪', val: '+U$730' }, { name: 'Carlos O. 🇸🇪', val: '+U$92' },
-    ];
-    var tTimes = ['há 2 min', 'há 4 min', 'há 7 min', 'agora mesmo', 'há 3 min', 'há 1 min'];
-    function shT() {
-      var el = document.getElementById('toast');
-      var e = tEntries[Math.floor(Math.random() * tEntries.length)];
-      document.getElementById('tName').textContent = e.name;
-      document.getElementById('tVal').textContent = e.val;
-      document.getElementById('tTime').textContent = tTimes[Math.floor(Math.random() * tTimes.length)];
-      el.classList.add('show');
-      setTimeout(function () { el.classList.remove('show'); }, 5500);
-      setTimeout(shT, Math.random() * 18000 + 13000);
-    }
-    setTimeout(shT, 8000);
-
-    // MODAL SOCIAL
-    var ms = ['3 brasileiros na Europa entraram hoje', 'Acesso ativo agora em Lisboa e Berlim', '2 pessoas acabaram de se inscrever'];
-    var mi = 0; setInterval(function () { mi = (mi + 1) % ms.length; var el = document.getElementById('msc'); if (el) el.textContent = ms[mi]; }, 12000);
-
-    // FAQ
-    window.tgF = function (btn) { var it = btn.closest('.faq-item'), was = it.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(function (el) { el.classList.remove('open'); }); if (!was) it.classList.add('open'); };
-
-    // FADE
-    var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }); }, { threshold: .06 });
-    document.querySelectorAll('.fade').forEach(function (el) { obs.observe(el); });
-    setTimeout(function () { document.querySelectorAll('#hero .fade').forEach(function (el) { el.classList.add('on'); }); }, 80);
-
-    // DDI
-    var DDI_DATA = [
-      { f: '🇬🇧', c: '+44' }, { f: '🇧🇷', c: '+55' }, { f: '🇺🇸', c: '+1' }, { f: '🇵🇹', c: '+351' },
-      { f: '🇪🇸', c: '+34' }, { f: '🇫🇷', c: '+33' }, { f: '🇩🇪', c: '+49' }, { f: '🇮🇹', c: '+39' },
-      { f: '🇳🇱', c: '+31' }, { f: '🇨🇭', c: '+41' }, { f: '🇧🇪', c: '+32' }, { f: '🇦🇹', c: '+43' },
-      { f: '🇸🇪', c: '+46' }, { f: '🇳🇴', c: '+47' }, { f: '🇩🇰', c: '+45' }, { f: '🇫🇮', c: '+358' },
-      { f: '🇮🇪', c: '+353' }, { f: '🇵🇱', c: '+48' }, { f: '🇨🇿', c: '+420' }, { f: '🇭🇺', c: '+36' },
-      { f: '🇷🇴', c: '+40' }, { f: '🇬🇷', c: '+30' }, { f: '🇷🇺', c: '+7' }, { f: '🇺🇦', c: '+380' },
-      { f: '🇯🇵', c: '+81' }, { f: '🇦🇺', c: '+61' }, { f: '🇸🇬', c: '+65' }, { f: '🇲🇾', c: '+60' },
-      { f: '🇨🇳', c: '+86' }, { f: '🇰🇷', c: '+82' }, { f: '🇮🇳', c: '+91' }, { f: '🇦🇪', c: '+971' },
-      { f: '🇹🇷', c: '+90' }, { f: '🇿🇦', c: '+27' }, { f: '🇳🇬', c: '+234' }, { f: '🇰🇪', c: '+254' },
-      { f: '🇲🇽', c: '+52' }, { f: '🇦🇷', c: '+54' }, { f: '🇨🇴', c: '+57' }, { f: '🇨🇱', c: '+56' },
-      { f: '🇵🇪', c: '+51' }, { f: '🇻🇪', c: '+58' }, { f: '🇺🇾', c: '+598' }
-    ];
-    var ddiFiltered = DDI_DATA.slice();
-    function renderDdi(list) {
-      ddiFiltered = list;
-      var el = document.getElementById('ddiList'), html = '';
-      for (var i = 0; i < list.length; i++)html += '<div class="ddi-opt" data-i="' + i + '">' + list[i].f + ' ' + list[i].c + '</div>';
-      el.innerHTML = html;
-      el.querySelectorAll('.ddi-opt').forEach(function (opt) { opt.addEventListener('click', function () { var d = ddiFiltered[parseInt(this.getAttribute('data-i'))]; selDdi(d.f, d.c); }); });
-    }
-    renderDdi(DDI_DATA);
-    window.filterDdi = function (q) { q = q.trim().toLowerCase(); renderDdi(q ? DDI_DATA.filter(function (d) { return d.c.includes(q); }) : DDI_DATA); };
-    window.selDdi = function (flag, code) {
-      document.getElementById('fcc').value = code; document.getElementById('ddiLabel').textContent = flag + ' ' + code;
-      document.getElementById('ddiDrop').classList.remove('open'); document.getElementById('ddiBtn').classList.remove('open');
-      document.getElementById('ddiSearch').value = ''; renderDdi(DDI_DATA); uP();
-    };
-    window.tgDdi = function () {
-      var drop = document.getElementById('ddiDrop'), btn = document.getElementById('ddiBtn'), isOpen = drop.classList.contains('open');
-      drop.classList.toggle('open'); btn.classList.toggle('open');
-      if (!isOpen) setTimeout(function () { document.getElementById('ddiSearch').focus(); }, 50);
-    };
-    document.addEventListener('click', function (e) { var w = document.getElementById('ddiWrap'); if (w && !w.contains(e.target)) { document.getElementById('ddiDrop').classList.remove('open'); document.getElementById('ddiBtn').classList.remove('open'); } });
-
-    // GEO
-    if (document.readyState === 'complete') { setTimeout(function () { fetch('https://ipapi.co/json/').catch(function () { }); }, 300); }
-    else { window.addEventListener('load', function () { setTimeout(function () { fetch('https://ipapi.co/json/').catch(function () { }); }, 300); }); }
-  </script>
 </body>
-
 </html>
