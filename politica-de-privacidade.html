@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5BCDGKX6');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade – Hubfloor</title>
+  <link rel="icon" href="img/Hubfloor_icon-1.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --ink: #101114;
+      --muted: #4f5660;
+      --card: #ffffff;
+      --accent: #d7f205;
+      --accent-ink: #0d1204;
+      --brand: #1f1f1f;
+      --line: #e7e9ee;
+      --shadow: 0 24px 60px rgba(16, 17, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 10% -10%, #eef5ff 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #f6ffe9 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1f1f1f 100%);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(215, 242, 5, 0.4), transparent 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #d4d7de;
+      max-width: 640px;
+    }
+
+    .hero .meta {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .nav {
+      margin: 26px 0 0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--accent-ink);
+      background: var(--accent);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(16, 17, 20, 0.08);
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      margin-top: 32px;
+    }
+
+    .section h2 {
+      font-size: clamp(22px, 3vw, 28px);
+      margin: 0 0 10px;
+    }
+
+    .section h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+    }
+
+    .section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .section ul {
+      margin: 0 0 12px 18px;
+      color: var(--muted);
+      padding: 0;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 999px;
+      padding: 6px;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: #cbd5f5;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.is-active {
+      background: #d3f92e;
+      color: #000;
+      box-shadow: 0 8px 20px rgba(177, 229, 12, 0.25);
+    }
+
+    .lang-section {
+      display: none;
+    }
+
+    .lang-section.is-active {
+      display: block;
+    }
+
+    .lang-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .lang-pill {
+      background: #f1f3f8;
+      color: #1f1f1f;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 28px 22px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BCDGKX6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main class="page">
+    <section class="hero">
+      <h1>Política de Privacidade</h1>
+      <nav class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn" type="button" data-lang="pt">Português</button>
+        <button class="lang-btn" type="button" data-lang="en">English</button>
+      </nav>
+    </section>
+
+    <section id="pt" class="section card lang-section" data-lang="pt">
+      <div class="lang-header">
+        <h2>Política de Privacidade</h2>
+        <span class="lang-pill">PT-BR</span>
+      </div>
+
+      <h3>Introdução</h3>
+      <p>Esta Política de Privacidade explica como os dados pessoais são coletados, utilizados, armazenados e compartilhados dentro do ecossistema Hubfloor.</p>
+      <p>A Hubfloor é uma plataforma independente de tecnologia, educação e relacionamento comercial. A proteção de dados pessoais é um princípio fundamental das operações da Hubfloor, e todas as atividades de tratamento são realizadas em conformidade com as leis de proteção de dados aplicáveis.</p>
+
+      <h3>Controladora de Dados</h3>
+      <p>Para fins da legislação aplicável de proteção de dados, a Hubfloor atua como controladora de dados em relação aos dados pessoais tratados dentro de seu ecossistema.</p>
+      <p>A Hubfloor é operada por uma entidade constituída nas Ilhas Virgens Britânicas.</p>
+      <p>Quando exigido por lei, especialmente quando indivíduos estiverem localizados na União Europeia ou no Reino Unido, a Hubfloor também cumpre o Regulamento Geral sobre a Proteção de Dados da União Europeia (GDPR) e o UK GDPR.</p>
+      <p>Os dados de contato para assuntos relacionados à privacidade estão indicados na Seção 12 desta Política.</p>
+
+      <h3>Marco Legal de Proteção de Dados Aplicável</h3>
+      <p>A Hubfloor realiza o tratamento de dados pessoais em conformidade com:</p>
+      <ul>
+        <li>a British Virgin Islands Data Protection Act, 2021; e</li>
+        <li>quando aplicável, o Regulamento (UE) 2016/679 (GDPR) e o UK GDPR, incluindo seus princípios de licitude, lealdade, transparência, minimização de dados e segurança.</li>
+      </ul>
+      <p>Esta Política aplica-se independentemente do país a partir do qual o ecossistema Hubfloor seja acessado.</p>
+
+      <h3>Categorias de Dados Pessoais</h3>
+      <p>Dependendo da natureza da interação com a Hubfloor, poderão ser tratados os seguintes dados pessoais:</p>
+      <ul>
+        <li>informações de identificação e contato (por exemplo: nome, endereço de e-mail, número de telefone);</li>
+        <li>dados de conta, acesso e uso;</li>
+        <li>informações relacionadas a produtos, conteúdos ou serviços educacionais acessados;</li>
+        <li>comunicações e informações relacionadas a suporte;</li>
+        <li>dados técnicos, como endereço IP, dispositivo ou registros de acesso (logs).</li>
+      </ul>
+      <p>A Hubfloor não coleta intencionalmente dados pessoais sensíveis, salvo quando estritamente necessário e legalmente permitido.</p>
+
+      <h3>Finalidades do Tratamento de Dados</h3>
+      <p>Os dados pessoais são tratados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>possibilitar o acesso e o uso da plataforma Hubfloor e serviços relacionados;</li>
+        <li>facilitar relações educacionais, operacionais e comerciais dentro do ecossistema;</li>
+        <li>gerir e governar a rede de parceiros (Hubers), incluindo permissões de acesso;</li>
+        <li>fornecer comunicações, suporte ao cliente e melhorias nos serviços;</li>
+        <li>cumprir obrigações legais, regulatórias e de governança interna aplicáveis.</li>
+      </ul>
+      <p>Os dados pessoais não serão tratados para finalidades incompatíveis com as descritas acima.</p>
+
+      <h3>Bases Legais para o Tratamento</h3>
+      <p>Dependendo das circunstâncias, a Hubfloor poderá se basear em uma ou mais das seguintes bases legais:</p>
+      <ul>
+        <li>o consentimento do titular dos dados;</li>
+        <li>a execução de contrato ou medidas preliminares solicitadas pelo titular dos dados;</li>
+        <li>os legítimos interesses da Hubfloor, incluindo a operação, segurança e governança de seu ecossistema;</li>
+        <li>o cumprimento de obrigações legais ou regulatórias.</li>
+      </ul>
+      <p>Quando o tratamento se basear no consentimento, este poderá ser retirado a qualquer momento.</p>
+
+      <h3>Compartilhamento de Dados no Ecossistema Hubfloor</h3>
+      <p>Os dados pessoais poderão ser compartilhados estritamente dentro do ecossistema Hubfloor da seguinte forma:</p>
+      <ul>
+        <li>entre o titular dos dados e o Huber responsável pelo fornecimento de conteúdo ou serviços educacionais;</li>
+        <li>entre o Huber e a Hubfloor, atuando como controladora central de dados;</li>
+        <li>internamente na Hubfloor para as finalidades descritas nesta Política.</li>
+      </ul>
+      <p>Os Hubers acessam dados pessoais exclusivamente sob a governança e instruções da Hubfloor e não adquirem propriedade ou controle independente sobre tais dados.</p>
+      <p>Nenhum dado é vendido ou compartilhado fora do ecossistema, salvo quando expressamente autorizado pelo titular dos dados ou exigido por lei.</p>
+
+      <h3>Transferências Internacionais de Dados</h3>
+      <p>Devido à natureza internacional do ecossistema Hubfloor, os dados pessoais poderão ser tratados ou acessados a partir de diferentes jurisdições.</p>
+      <p>Quando ocorrerem transferências internacionais, a Hubfloor implementará salvaguardas adequadas, em conformidade com a legislação aplicável de proteção de dados, incluindo medidas contratuais e organizacionais destinadas a proteger os dados pessoais.</p>
+
+      <h3>Retenção de Dados</h3>
+      <p>Os dados pessoais serão mantidos apenas pelo período necessário para cumprir as finalidades para as quais foram coletados, incluindo exigências legais, regulatórias, contábeis ou de reporte.</p>
+      <p>Os prazos de retenção podem variar de acordo com a natureza dos dados e as obrigações legais aplicáveis.</p>
+
+      <h3>Segurança dos Dados</h3>
+      <p>A Hubfloor implementa medidas técnicas e organizacionais adequadas para proteger os dados pessoais contra acesso não autorizado, perda, uso indevido, alteração ou divulgação.</p>
+      <p>O acesso aos dados pessoais é restrito com base na necessidade de conhecimento (need-to-know) e está sujeito a controles e monitoramento internos.</p>
+
+      <h3>Direitos do Titular dos Dados</h3>
+      <p>Dependendo da legislação aplicável, os titulares dos dados têm o direito de:</p>
+      <ul>
+        <li>solicitar acesso aos seus dados pessoais;</li>
+        <li>solicitar a correção ou atualização de dados incorretos;</li>
+        <li>solicitar a exclusão dos dados pessoais, quando legalmente aplicável;</li>
+        <li>solicitar a limitação do tratamento ou se opor ao tratamento;</li>
+        <li>retirar o consentimento a qualquer momento, quando o tratamento se basear no consentimento;</li>
+        <li>apresentar reclamação perante autoridade competente de proteção de dados.</li>
+      </ul>
+      <p>Os direitos poderão ser exercidos conforme descrito na Seção 12 abaixo.</p>
+
+      <h3>Contato e Exercício de Direitos</h3>
+      <p>Solicitações, dúvidas ou preocupações relacionadas a esta Política de Privacidade ou ao tratamento de dados pessoais poderão ser enviadas por meio de:</p>
+      <ul>
+        <li>E-mail: help.hubfloor.com (ou outro canal de contato específico designado pela Hubfloor)</li>
+      </ul>
+      <p>As solicitações serão tratadas em conformidade com a legislação aplicável de proteção de dados.</p>
+
+      <h3>Alterações a esta Política de Privacidade</h3>
+      <p>A Hubfloor poderá atualizar esta Política de Privacidade periodicamente para refletir alterações em requisitos legais, práticas operacionais ou na estrutura do ecossistema.</p>
+      <p>A versão mais atual estará sempre disponível na plataforma.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="en" class="section card lang-section" data-lang="en">
+      <div class="lang-header">
+        <h2>Privacy Policy</h2>
+        <span class="lang-pill">EN</span>
+      </div>
+
+      <h3>Introduction</h3>
+      <p>This Privacy Policy explains how personal data is collected, used, stored and shared within the Hubfloor ecosystem.</p>
+      <p>Hubfloor is an independent technology, education and commercial relationship platform. The protection of personal data is a core principle of Hubfloor’s operations, and all processing activities are carried out in accordance with applicable data protection laws.</p>
+
+      <h3>Data Controller</h3>
+      <p>For the purposes of applicable data protection laws, Hubfloor acts as the data controller in relation to personal data processed within its ecosystem.</p>
+      <p>Hubfloor is operated by an entity incorporated in the British Virgin Islands.</p>
+      <p>Where required by law, and in particular where individuals are located in the European Union or the United Kingdom, Hubfloor also complies with the EU General Data Protection Regulation (GDPR) and the UK GDPR.</p>
+      <p>Contact details for privacy-related matters are provided in Section 12 of this Policy.</p>
+
+      <h3>Applicable Data Protection Framework</h3>
+      <p>Hubfloor processes personal data in accordance with:</p>
+      <ul>
+        <li>the British Virgin Islands Data Protection Act, 2021; and</li>
+        <li>where applicable, Regulation (EU) 2016/679 (GDPR) and the UK GDPR, including their principles of lawfulness, fairness, transparency, data minimisation and security.</li>
+      </ul>
+      <p>This Policy applies regardless of the country from which the Hubfloor ecosystem is accessed.</p>
+
+      <h3>Categories of Personal Data</h3>
+      <p>Depending on the nature of the interaction with Hubfloor, we may process the following categories of personal data:</p>
+      <ul>
+        <li>identification and contact information (e.g. name, email address, telephone number);</li>
+        <li>account, access and usage data;</li>
+        <li>information relating to educational products, content or services accessed;</li>
+        <li>communications and support-related information;</li>
+        <li>technical data such as IP address, device or log information.</li>
+      </ul>
+      <p>Hubfloor does not intentionally collect sensitive personal data unless strictly necessary and legally permitted.</p>
+
+      <h3>Purposes of Data Processing</h3>
+      <p>Personal data is processed strictly for the following purposes:</p>
+      <ul>
+        <li>enabling access to and use of the Hubfloor platform and related services;</li>
+        <li>facilitating educational, operational and commercial relationships within the ecosystem;</li>
+        <li>managing and governing the partner (Huber) network, including access permissions;</li>
+        <li>providing communications, customer support and service improvements;</li>
+        <li>complying with applicable legal, regulatory and internal governance obligations.</li>
+      </ul>
+      <p>Personal data shall not be processed for purposes incompatible with those described above.</p>
+
+      <h3>Legal Bases for Processing</h3>
+      <p>Depending on the circumstances, Hubfloor relies on one or more of the following legal bases:</p>
+      <ul>
+        <li>the consent of the data subject;</li>
+        <li>the performance of a contract or steps taken at the request of the data subject;</li>
+        <li>Hubfloor’s legitimate interests, including the operation, security and governance of its ecosystem;</li>
+        <li>compliance with legal or regulatory obligations.</li>
+      </ul>
+      <p>Where consent is required, it may be withdrawn at any time.</p>
+
+      <h3>Data Sharing Within the Hubfloor Ecosystem</h3>
+      <p>Personal data may be shared strictly within the Hubfloor ecosystem as follows:</p>
+      <ul>
+        <li>between the data subject and the relevant Huber providing educational content or services;</li>
+        <li>between the Huber and Hubfloor, acting as the central data controller;</li>
+        <li>internally within Hubfloor for the purposes described in this Policy.</li>
+      </ul>
+      <p>Hubers access personal data solely under Hubfloor’s governance and instructions and do not acquire ownership or independent control over such data.</p>
+      <p>No data is sold or shared outside the ecosystem unless expressly authorised by the data subject or required by law.</p>
+
+      <h3>International Data Transfers</h3>
+      <p>Due to the international nature of the Hubfloor ecosystem, personal data may be processed or accessed from different jurisdictions.</p>
+      <p>Where international transfers occur, Hubfloor implements appropriate safeguards in accordance with applicable data protection laws, including contractual and organisational measures designed to protect personal data.</p>
+
+      <h3>Data Retention</h3>
+      <p>Personal data is retained only for as long as necessary to fulfil the purposes for which it was collected, including legal, regulatory, accounting or reporting requirements.</p>
+      <p>Retention periods may vary depending on the nature of the data and applicable legal obligations.</p>
+
+      <h3>Data Security</h3>
+      <p>Hubfloor implements appropriate technical and organisational measures to protect personal data against unauthorised access, loss, misuse, alteration or disclosure.</p>
+      <p>Access to personal data is restricted on a need-to-know basis and subject to internal controls and monitoring.</p>
+
+      <h3>Data Subject Rights</h3>
+      <p>Depending on the applicable law, data subjects have the right to:</p>
+      <ul>
+        <li>request access to their personal data;</li>
+        <li>request correction or updating of inaccurate data;</li>
+        <li>request deletion of personal data, where legally applicable;</li>
+        <li>request restriction of or object to processing;</li>
+        <li>withdraw consent at any time, where processing is based on consent;</li>
+        <li>lodge a complaint with a competent data protection authority.</li>
+      </ul>
+      <p>Rights may be exercised as described in Section 12 below.</p>
+
+      <h3>Contact and Exercise of Rights</h3>
+      <p>Requests, questions or concerns regarding this Privacy Policy or the processing of personal data may be submitted via:</p>
+      <ul>
+        <li>Email: help.hubfloor.com (or another dedicated contact channel designated by Hubfloor)</li>
+      </ul>
+      <p>Requests will be handled in accordance with applicable data protection laws.</p>
+
+      <h3>Changes to this Privacy Policy</h3>
+      <p>Hubfloor may update this Privacy Policy from time to time to reflect changes in legal requirements, operational practices or the ecosystem structure.</p>
+      <p>The most current version will always be made available through the platform.</p>
+    </section>
+
+    <div class="footer">Hubfloor Ecosystem • Política de Privacidade / Privacy Policy</div>
+  </main>
+  <script>
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('.lang-section'));
+
+      function setActive(lang) {
+        buttons.forEach(function (btn) {
+          var isActive = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('is-active', isActive);
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        sections.forEach(function (section) {
+          var isActive = section.getAttribute('data-lang') === lang;
+          section.classList.toggle('is-active', isActive);
+        });
+
+        if (lang === 'en') {
+          document.documentElement.setAttribute('lang', 'en');
+          location.hash = '#en';
+        } else {
+          document.documentElement.setAttribute('lang', 'pt-BR');
+          location.hash = '#pt';
+        }
+      }
+
+      function initialLang() {
+        var hash = (location.hash || '').replace('#', '');
+        if (hash === 'en') return 'en';
+        return 'pt';
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setActive(btn.getAttribute('data-lang'));
+        });
+      });
+
+      setActive(initialLang());
+    })();
+  </script>
+</body>
+</html>
+<!-- noop: commit update -->

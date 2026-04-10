@@ -1,0 +1,14 @@
+# Hide .html extension for clean URLs
+RewriteEngine On
+
+# Serve existing files and directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Remove .html from URLs (optional canonical)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?]
+RewriteRule ^ %1 [R=301,L]
+
+# Map extensionless requests to .html files
+RewriteRule ^([^./]+)$ $1.html [L]

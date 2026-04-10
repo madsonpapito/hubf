@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato – Hubfloor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --ink: #101114;
+      --muted: #4f5660;
+      --card: #ffffff;
+      --accent: #d7f205;
+      --accent-ink: #0d1204;
+      --brand: #1f1f1f;
+      --line: #e7e9ee;
+      --shadow: 0 24px 60px rgba(16, 17, 20, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #eef5ff 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #f6ffe9 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1f1f1f 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(215,242,5,0.4), transparent 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .hero p.subtitle {
+      color: #d4d7de;
+      font-size: 15px;
+      max-width: 540px;
+    }
+
+    .hero .meta {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(255,255,255,0.10);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #c8d0e0;
+    }
+
+    .meta-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ── Language switch ── */
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.20);
+      border-radius: 999px;
+      padding: 5px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: #b0bcd4;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.is-active {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 6px 18px rgba(177,229,12,0.30);
+    }
+
+    /* ── Lang visibility ── */
+    .lang-section { display: none; }
+    .lang-section.is-active { display: block; }
+
+    /* ── Grid layout ── */
+    .section { margin-top: 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+      .grid .wide { grid-column: 1; }
+    }
+
+    .wide { grid-column: 1 / -1; }
+
+    /* ── Card base ── */
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(16, 17, 20, 0.07);
+      border: 1px solid var(--line);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 24px 52px rgba(16, 17, 20, 0.11);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card header ── */
+    .card-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f0ffc0, #e2f56a);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .card-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ── Contact value ── */
+    .contact-value {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .contact-value a,
+    .contact-value span {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── Email card special ── */
+    .card-email .contact-value a {
+      font-size: 16px;
+      background: linear-gradient(90deg, #5a7a00, #8db800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── CTA button ── */
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .btn-accent:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── Address card ── */
+    .address-block {
+      margin-top: 10px;
+      padding: 14px 16px;
+      background: #f7f9ff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .address-block strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── Company badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f3f8;
+      border: 1px solid var(--line);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .badge-dot {
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ── Info row in wide card ── */
+    .info-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .info-item {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .info-item .label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #9aa3b0;
+      margin-bottom: 3px;
+    }
+
+    .info-item .value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 18px 0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 28px 22px; }
+      .hero-top { flex-direction: column; }
+      .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Contato</h1>
+        <p class="subtitle">Estamos aqui para ajudar com dúvidas, solicitações ou reclamações.</p>
+      </div>
+      <nav class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn" type="button" data-lang="pt">Português</button>
+        <button class="lang-btn" type="button" data-lang="en">English</button>
+      </nav>
+    </div>
+    <div class="meta">
+      <span class="meta-dot"></span>
+      Suporte disponível em português e inglês
+      <span style="opacity:.4">|</span>
+      Hubfloor Ecosystem
+    </div>
+  </section>
+
+  <!-- ══════════════ PORTUGUÊS ══════════════ -->
+  <div id="pt" class="lang-section" data-lang="pt">
+
+    <section class="section">
+      <div class="grid">
+
+        <!-- E-mail -->
+        <div class="card card-email">
+          <div class="card-icon">✉️</div>
+          <div class="card-label">E-mail</div>
+          <h3>Fale Conosco</h3>
+          <p>Para dúvidas, solicitações ou reclamações relacionadas à privacidade, suporte ou uso da plataforma, envie um e-mail para:</p>
+          <div class="contact-value">
+            <a href="mailto:support@hubfloor.com">support@hubfloor.com</a>
+          </div>
+          <a class="btn-accent" href="mailto:support@hubfloor.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Enviar e-mail
+          </a>
+        </div>
+
+        <!-- Endereço -->
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <div class="card-label">Endereço</div>
+          <h3>Sede Registrada</h3>
+          <p>Nossa sede está localizada nas Ilhas Virgens Britânicas (BVI), jurisdição que rege nossas operações legais e de proteção de dados.</p>
+          <div class="address-block">
+            Palm Grove House<br />
+            P.O. Box 438<br />
+            Road Town, Tortola<br />
+            VG1110 — British Virgin Islands
+          </div>
+        </div>
+
+        <!-- Empresa — wide -->
+        <div class="card wide">
+          <div class="card-icon">🏢</div>
+          <div class="card-label">Dados da Empresa</div>
+          <h3>Informações Corporativas</h3>
+          <p>A Hubfloor é operada pela entidade legal abaixo registrada nas Ilhas Virgens Britânicas:</p>
+          <hr class="divider" />
+          <div class="info-row">
+            <div class="info-item">
+              <div class="label">Razão Social</div>
+              <div class="value">TSA Capital Holding Ltd</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Número de Registro</div>
+              <div class="value">2047185</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Jurisdição</div>
+              <div class="value">British Virgin Islands (BVI)</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Endereço</div>
+              <div class="value">Palm Grove House, Road Town, Tortola</div>
+            </div>
+          </div>
+          <span class="badge">
+            <span class="badge-dot"></span>
+            BVI Data Protection Act, 2021 — Controladora de Dados
+          </span>
+        </div>
+
+        <!-- Privacidade -->
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <div class="card-label">Privacidade</div>
+          <h3>Solicitações de Privacidade</h3>
+          <p>Para exercer seus direitos de titular de dados — como acesso, retificação, exclusão ou portabilidade —, entre em contato pelo e-mail de suporte informando o assunto <strong>"Solicitação de Privacidade"</strong>.</p>
+          <p>Responderemos dentro do prazo previsto na legislação aplicável.</p>
+        </div>
+
+        <!-- Reclamações -->
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <div class="card-label">Reclamações</div>
+          <h3>Canal de Reclamações</h3>
+          <p>Caso sua solicitação não seja atendida de forma satisfatória, você tem o direito de registrar reclamação perante a autoridade de proteção de dados competente em sua região.</p>
+          <p>Estamos comprometidos a resolver toda e qualquer questão com transparência e agilidade.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ══════════════ ENGLISH ══════════════ -->
+  <div id="en" class="lang-section" data-lang="en">
+
+    <section class="section">
+      <div class="grid">
+
+        <!-- E-mail -->
+        <div class="card card-email">
+          <div class="card-icon">✉️</div>
+          <div class="card-label">Email</div>
+          <h3>Get in Touch</h3>
+          <p>For questions, requests or complaints related to privacy, support or platform usage, please reach out to us at:</p>
+          <div class="contact-value">
+            <a href="mailto:support@hubfloor.com">support@hubfloor.com</a>
+          </div>
+          <a class="btn-accent" href="mailto:support@hubfloor.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send email
+          </a>
+        </div>
+
+        <!-- Address -->
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <div class="card-label">Address</div>
+          <h3>Registered Office</h3>
+          <p>Our registered office is located in the British Virgin Islands (BVI), the jurisdiction governing our legal and data protection operations.</p>
+          <div class="address-block">
+            Palm Grove House<br />
+            P.O. Box 438<br />
+            Road Town, Tortola<br />
+            VG1110 — British Virgin Islands
+          </div>
+        </div>
+
+        <!-- Company — wide -->
+        <div class="card wide">
+          <div class="card-icon">🏢</div>
+          <div class="card-label">Company Details</div>
+          <h3>Corporate Information</h3>
+          <p>Hubfloor is operated by the following legal entity, registered in the British Virgin Islands:</p>
+          <hr class="divider" />
+          <div class="info-row">
+            <div class="info-item">
+              <div class="label">Legal Name</div>
+              <div class="value">TSA Capital Holding Ltd</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Registration Number</div>
+              <div class="value">2047185</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Jurisdiction</div>
+              <div class="value">British Virgin Islands (BVI)</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Address</div>
+              <div class="value">Palm Grove House, Road Town, Tortola</div>
+            </div>
+          </div>
+          <span class="badge">
+            <span class="badge-dot"></span>
+            BVI Data Protection Act, 2021 — Data Controller
+          </span>
+        </div>
+
+        <!-- Privacy -->
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <div class="card-label">Privacy</div>
+          <h3>Privacy Requests</h3>
+          <p>To exercise your data subject rights — such as access, rectification, erasure or portability — please contact us via the support email with the subject line <strong>"Privacy Request"</strong>.</p>
+          <p>We will respond within the timeframe required by applicable law.</p>
+        </div>
+
+        <!-- Complaints -->
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <div class="card-label">Complaints</div>
+          <h3>Complaints Channel</h3>
+          <p>If your request is not addressed to your satisfaction, you have the right to lodge a complaint with the competent data protection authority in your region.</p>
+          <p>We are committed to resolving all issues with transparency and promptness.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <div class="footer">Hubfloor Ecosystem · TSA Capital Holding Ltd · Reg. 2047185 · BVI</div>
+</main>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.lang-section'));
+
+    function setActive(lang) {
+      buttons.forEach(function (btn) {
+        var active = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      sections.forEach(function (s) {
+        s.classList.toggle('is-active', s.getAttribute('data-lang') === lang);
+      });
+      document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+      location.hash = '#' + lang;
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setActive(btn.getAttribute('data-lang')); });
+    });
+
+    var hash = (location.hash || '').replace('#', '');
+    setActive(hash === 'en' ? 'en' : 'pt');
+  })();
+</script>
+</body>
+</html>

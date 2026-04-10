@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termos de Uso – Hubfloor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --ink: #101114;
+      --muted: #4f5660;
+      --card: #ffffff;
+      --accent: #d7f205;
+      --accent-ink: #0d1204;
+      --brand: #1f1f1f;
+      --line: #e7e9ee;
+      --shadow: 0 24px 60px rgba(16, 17, 20, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #eef5ff 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #f6ffe9 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1f1f1f 100%);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(215, 242, 5, 0.4), transparent 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      margin: 0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero p.subtitle {
+      margin: 0;
+      color: #d4d7de;
+      font-size: 15px;
+      max-width: 580px;
+    }
+
+    .hero .meta {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(255,255,255,0.10);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #c8d0e0;
+    }
+
+    .meta-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Language switch ── */
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.20);
+      border-radius: 999px;
+      padding: 5px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: #b0bcd4;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.is-active {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 6px 18px rgba(177, 229, 12, 0.30);
+    }
+
+    /* ── Navigation pills ── */
+    .nav {
+      margin: 20px 0 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--accent-ink);
+      background: var(--accent);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      transition: opacity 0.15s;
+    }
+
+    .nav a:hover { opacity: 0.85; }
+
+    /* ── Cards / Sections ── */
+    .section { margin-top: 28px; }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 18px 40px rgba(16, 17, 20, 0.08);
+      border: 1px solid var(--line);
+    }
+
+    .lang-section { display: none; }
+    .lang-section.is-active { display: block; }
+
+    .lang-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lang-header h2 {
+      margin: 0;
+      font-size: clamp(20px, 2.8vw, 26px);
+      font-weight: 700;
+    }
+
+    .lang-pill {
+      background: #f1f3f8;
+      color: #1f1f1f;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: #f7f9ff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .toc ol li { margin-bottom: 4px; }
+    .toc ol a { color: inherit; text-decoration: none; }
+    .toc ol a:hover { color: var(--ink); text-decoration: underline; }
+
+    /* ── Content typography ── */
+    .clause {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .clause:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .clause-num {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .clause h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .clause p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .clause ul, .clause ol {
+      margin: 0 0 10px 18px;
+      color: var(--muted);
+      padding: 0;
+      font-size: 14.5px;
+    }
+
+    .clause ul li, .clause ol li { margin-bottom: 5px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: linear-gradient(135deg, #f6ffe9, #efffcf);
+      border: 1px solid #c6e84a;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: #3a4a10;
+      margin-top: 14px;
+    }
+
+    .highlight strong { color: #2a3a08; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 28px 22px; }
+      .card { padding: 22px; }
+      .hero-top { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Termos de Uso</h1>
+        <p class="subtitle">Leia com atenção antes de utilizar o ecossistema Hubfloor.</p>
+      </div>
+      <nav class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn" type="button" data-lang="pt">Português</button>
+        <button class="lang-btn" type="button" data-lang="en">English</button>
+      </nav>
+    </div>
+    <div class="meta">
+      <span class="meta-dot"></span>
+      Última atualização: Janeiro de 2025
+      <span style="opacity:.4">|</span>
+      Versão 1.0
+    </div>
+    <nav class="nav" aria-label="Navegação rápida">
+      <a href="#aceitacao">Aceitação</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#conduta">Conduta</a>
+      <a href="#propriedade">Propriedade Intelectual</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#responsabilidade">Responsabilidade</a>
+      <a href="#rescisao">Rescisão</a>
+      <a href="#legislacao">Legislação</a>
+    </nav>
+  </section>
+
+  <!-- ══════════════ PORTUGUÊS ══════════════ -->
+  <section id="pt" class="section card lang-section" data-lang="pt">
+    <div class="lang-header">
+      <h2>Termos de Uso</h2>
+      <span class="lang-pill">PT-BR</span>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <p class="toc-title">Índice</p>
+      <ol>
+        <li><a href="#pt-1">Aceitação dos Termos</a></li>
+        <li><a href="#pt-2">Descrição dos Serviços</a></li>
+        <li><a href="#pt-3">Elegibilidade e Cadastro</a></li>
+        <li><a href="#pt-4">Conduta do Usuário</a></li>
+        <li><a href="#pt-5">Propriedade Intelectual</a></li>
+        <li><a href="#pt-6">Privacidade e Dados Pessoais</a></li>
+        <li><a href="#pt-7">Limitação de Responsabilidade</a></li>
+        <li><a href="#pt-8">Rescisão e Suspensão</a></li>
+        <li><a href="#pt-9">Modificações dos Termos</a></li>
+        <li><a href="#pt-10">Legislação Aplicável e Foro</a></li>
+      </ol>
+    </div>
+
+    <!-- 1 -->
+    <div class="clause" id="pt-1">
+      <span class="clause-num">1</span>
+      <h3>Aceitação dos Termos</h3>
+      <p>Ao acessar, navegar ou utilizar qualquer produto, conteúdo ou serviço disponibilizado pela <strong>Hubfloor</strong> ou por seus parceiros (os "Hubers"), o usuário declara ter lido, compreendido e aceito integralmente os presentes Termos de Uso ("Termos"), bem como a Política de Privacidade e quaisquer diretrizes complementares publicadas pela Hubfloor.</p>
+      <p>Caso o usuário não concorde com qualquer disposição destes Termos, deverá abster-se de utilizar o ecossistema Hubfloor.</p>
+      <div class="highlight">
+        <strong>Atenção:</strong> O uso contínuo dos serviços após modificações nestes Termos implica a aceitação automática das alterações.
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="clause" id="pt-2">
+      <span class="clause-num">2</span>
+      <h3>Descrição dos Serviços</h3>
+      <p>A Hubfloor é uma plataforma independente de tecnologia, educação e relacionamento comercial que conecta usuários a Hubers — parceiros independentes responsáveis pela oferta de produtos, conteúdos educacionais e serviços de suporte.</p>
+      <p>Os serviços disponibilizados incluem, sem limitação:</p>
+      <ul>
+        <li>acesso a plataformas de ensino e trilhas de aprendizado;</li>
+        <li>ferramentas de gestão e relacionamento comercial;</li>
+        <li>comunicações, suporte técnico e operacional;</li>
+        <li>recursos de comunidade, conteúdos digitais e materiais de apoio.</li>
+      </ul>
+      <p>A Hubfloor reserva-se o direito de alterar, suspender ou encerrar qualquer serviço a qualquer momento, mediante aviso prévio razoável.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="clause" id="pt-3">
+      <span class="clause-num">3</span>
+      <h3>Elegibilidade e Cadastro</h3>
+      <p>O uso da plataforma é restrito a pessoas físicas com capacidade civil plena, com idade mínima de 18 (dezoito) anos, ou a pessoas jurídicas devidamente constituídas.</p>
+      <p>Ao realizar o cadastro, o usuário compromete-se a:</p>
+      <ul>
+        <li>fornecer informações verdadeiras, precisas e atualizadas;</li>
+        <li>manter a confidencialidade de suas credenciais de acesso;</li>
+        <li>notificar imediatamente a Hubfloor sobre qualquer uso não autorizado de sua conta;</li>
+        <li>não compartilhar, ceder ou transferir sua conta a terceiros.</li>
+      </ul>
+      <p>A Hubfloor poderá recusar cadastros ou cancelar contas a seu exclusivo critério, sem necessidade de justificativa.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="clause" id="pt-4">
+      <span class="clause-num">4</span>
+      <h3>Conduta do Usuário</h3>
+      <p>O usuário concorda em utilizar o ecossistema Hubfloor exclusivamente para fins lícitos e em conformidade com estes Termos. É expressamente proibido:</p>
+      <ul>
+        <li>utilizar os serviços para fins ilegais, fraudulentos ou prejudiciais a terceiros;</li>
+        <li>reproduzir, distribuir, modificar ou criar obras derivadas de conteúdos protegidos sem autorização;</li>
+        <li>realizar engenharia reversa, descompilar ou tentar obter o código-fonte da plataforma;</li>
+        <li>publicar conteúdo ofensivo, difamatório, discriminatório ou que viole direitos de terceiros;</li>
+        <li>utilizar scripts, bots ou mecanismos automatizados para acessar a plataforma sem autorização;</li>
+        <li>interferir no funcionamento técnico dos serviços ou comprometer sua segurança.</li>
+      </ul>
+      <p>O descumprimento das regras de conduta poderá resultar em suspensão ou encerramento imediato da conta, sem prejuízo de eventuais medidas legais cabíveis.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="clause" id="pt-5">
+      <span class="clause-num">5</span>
+      <h3>Propriedade Intelectual</h3>
+      <p>Todos os conteúdos, marcas, logotipos, softwares, layouts, textos, imagens, vídeos, materiais didáticos e demais elementos disponibilizados no ecossistema Hubfloor são de propriedade exclusiva da Hubfloor ou de seus licenciantes, sendo protegidos pela legislação de propriedade intelectual aplicável.</p>
+      <p>Ao usuário é concedida uma licença limitada, não exclusiva, intransferível e revogável para acessar e utilizar os serviços exclusivamente para fins pessoais e não comerciais, nos termos aqui estabelecidos.</p>
+      <p>É vedado ao usuário:</p>
+      <ul>
+        <li>reproduzir ou redistribuir qualquer conteúdo da plataforma sem autorização expressa e por escrito;</li>
+        <li>utilizar marcas ou elementos visuais da Hubfloor sem autorização prévia;</li>
+        <li>explorar comercialmente quaisquer conteúdos obtidos por meio da plataforma.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="clause" id="pt-6">
+      <span class="clause-num">6</span>
+      <h3>Privacidade e Dados Pessoais</h3>
+      <p>O tratamento de dados pessoais pelo ecossistema Hubfloor é regido pela <strong>Política de Privacidade</strong> e pelo <strong>Termo de Consentimento</strong> da Hubfloor, disponíveis em nossa plataforma, em conformidade com a British Virgin Islands Data Protection Act, 2021 e, quando aplicável, com o GDPR e o UK GDPR.</p>
+      <p>Ao utilizar os serviços, o usuário reconhece e consente com o tratamento de seus dados conforme descrito nos referidos documentos.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="clause" id="pt-7">
+      <span class="clause-num">7</span>
+      <h3>Limitação de Responsabilidade</h3>
+      <p>Os serviços são fornecidos "no estado em que se encontram" e "conforme disponibilidade". A Hubfloor não garante que os serviços serão ininterruptos, livres de erros ou plenamente seguros.</p>
+      <p>Na extensão máxima permitida pela lei aplicável, a Hubfloor não será responsável por:</p>
+      <ul>
+        <li>danos indiretos, incidentais, especiais, consequenciais ou punitivos;</li>
+        <li>perda de dados, lucros cessantes ou interrupção de negócios;</li>
+        <li>condutas, conteúdos ou serviços prestados por Hubers ou terceiros;</li>
+        <li>falhas técnicas, interrupções ou indisponibilidades decorrentes de causas além do controle razoável da Hubfloor.</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="clause" id="pt-8">
+      <span class="clause-num">8</span>
+      <h3>Rescisão e Suspensão</h3>
+      <p>A Hubfloor poderá, a seu exclusivo critério e sem aviso prévio, suspender ou encerrar o acesso do usuário à plataforma nas seguintes hipóteses:</p>
+      <ul>
+        <li>violação de qualquer disposição destes Termos;</li>
+        <li>conduta fraudulenta, abusiva ou prejudicial ao ecossistema;</li>
+        <li>determinação de autoridade competente;</li>
+        <li>encerramento dos serviços ou da plataforma.</li>
+      </ul>
+      <p>O usuário poderá encerrar sua conta a qualquer momento, mediante solicitação formal à Hubfloor, sem prejuízo das obrigações assumidas até a data do encerramento.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="clause" id="pt-9">
+      <span class="clause-num">9</span>
+      <h3>Modificações dos Termos</h3>
+      <p>A Hubfloor reserva-se o direito de alterar estes Termos a qualquer momento. As modificações entrarão em vigor na data de sua publicação na plataforma, sendo o usuário notificado por meio dos canais de comunicação disponíveis.</p>
+      <p>A continuidade do uso dos serviços após a publicação das alterações constitui aceitação tácita dos novos Termos.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="clause" id="pt-10">
+      <span class="clause-num">10</span>
+      <h3>Legislação Aplicável e Foro</h3>
+      <p>Estes Termos são regidos pela legislação das Ilhas Virgens Britânicas (British Virgin Islands). Na medida em que o usuário esteja localizado na União Europeia ou no Reino Unido, aplica-se adicionalmente a legislação local de proteção ao consumidor e de proteção de dados, conforme cabível.</p>
+      <p>Eventuais disputas serão submetidas, prioritariamente, à resolução amigável. Na impossibilidade, as partes elegem o foro competente nos termos da legislação aplicável às Ilhas Virgens Britânicas, sem prejuízo dos direitos do consumidor previstos na legislação local do usuário.</p>
+      <div class="highlight">
+        Para dúvidas ou solicitações relacionadas a estes Termos, entre em contato: <strong>legal@hubfloor.com</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════ ENGLISH ══════════════ -->
+  <section id="en" class="section card lang-section" data-lang="en">
+    <div class="lang-header">
+      <h2>Terms of Use</h2>
+      <span class="lang-pill">EN</span>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <p class="toc-title">Table of Contents</p>
+      <ol>
+        <li><a href="#en-1">Acceptance of Terms</a></li>
+        <li><a href="#en-2">Description of Services</a></li>
+        <li><a href="#en-3">Eligibility and Registration</a></li>
+        <li><a href="#en-4">User Conduct</a></li>
+        <li><a href="#en-5">Intellectual Property</a></li>
+        <li><a href="#en-6">Privacy and Personal Data</a></li>
+        <li><a href="#en-7">Limitation of Liability</a></li>
+        <li><a href="#en-8">Termination and Suspension</a></li>
+        <li><a href="#en-9">Modifications to Terms</a></li>
+        <li><a href="#en-10">Governing Law and Jurisdiction</a></li>
+      </ol>
+    </div>
+
+    <!-- 1 -->
+    <div class="clause" id="en-1">
+      <span class="clause-num">1</span>
+      <h3>Acceptance of Terms</h3>
+      <p>By accessing, browsing or using any product, content or service made available by <strong>Hubfloor</strong> or its partners (the "Hubers"), the user declares to have read, understood and fully accepted these Terms of Use ("Terms"), as well as the Privacy Policy and any supplementary guidelines published by Hubfloor.</p>
+      <p>If the user does not agree with any provision of these Terms, they must refrain from using the Hubfloor ecosystem.</p>
+      <div class="highlight">
+        <strong>Note:</strong> Continued use of the services after modifications to these Terms constitutes automatic acceptance of the changes.
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="clause" id="en-2">
+      <span class="clause-num">2</span>
+      <h3>Description of Services</h3>
+      <p>Hubfloor is an independent technology, education and commercial relationship platform that connects users to Hubers — independent partners responsible for offering products, educational content and support services.</p>
+      <p>The services made available include, without limitation:</p>
+      <ul>
+        <li>access to learning platforms and educational tracks;</li>
+        <li>management and commercial relationship tools;</li>
+        <li>communications, technical and operational support;</li>
+        <li>community resources, digital content and supporting materials.</li>
+      </ul>
+      <p>Hubfloor reserves the right to change, suspend or discontinue any service at any time, with reasonable prior notice.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="clause" id="en-3">
+      <span class="clause-num">3</span>
+      <h3>Eligibility and Registration</h3>
+      <p>Use of the platform is restricted to individuals with full legal capacity, aged at least 18 (eighteen) years, or to duly incorporated legal entities.</p>
+      <p>Upon registration, the user agrees to:</p>
+      <ul>
+        <li>provide true, accurate and up-to-date information;</li>
+        <li>maintain the confidentiality of their access credentials;</li>
+        <li>immediately notify Hubfloor of any unauthorised use of their account;</li>
+        <li>not share, assign or transfer their account to third parties.</li>
+      </ul>
+      <p>Hubfloor may refuse registrations or cancel accounts at its sole discretion, without the need for justification.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="clause" id="en-4">
+      <span class="clause-num">4</span>
+      <h3>User Conduct</h3>
+      <p>The user agrees to use the Hubfloor ecosystem solely for lawful purposes and in accordance with these Terms. The following are expressly prohibited:</p>
+      <ul>
+        <li>using the services for illegal, fraudulent or harmful purposes;</li>
+        <li>reproducing, distributing, modifying or creating derivative works from protected content without authorisation;</li>
+        <li>reverse engineering, decompiling or attempting to obtain the platform's source code;</li>
+        <li>posting offensive, defamatory, discriminatory content or content that violates third-party rights;</li>
+        <li>using scripts, bots or automated mechanisms to access the platform without authorisation;</li>
+        <li>interfering with the technical operation of the services or compromising their security.</li>
+      </ul>
+      <p>Failure to comply with the conduct rules may result in immediate suspension or termination of the account, without prejudice to any applicable legal measures.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="clause" id="en-5">
+      <span class="clause-num">5</span>
+      <h3>Intellectual Property</h3>
+      <p>All content, trademarks, logos, software, layouts, texts, images, videos, educational materials and other elements made available in the Hubfloor ecosystem are the exclusive property of Hubfloor or its licensors, protected by applicable intellectual property law.</p>
+      <p>The user is granted a limited, non-exclusive, non-transferable and revocable licence to access and use the services solely for personal and non-commercial purposes, under the terms set forth herein.</p>
+      <p>The user is prohibited from:</p>
+      <ul>
+        <li>reproducing or redistributing any platform content without express written authorisation;</li>
+        <li>using Hubfloor trademarks or visual elements without prior authorisation;</li>
+        <li>commercially exploiting any content obtained through the platform.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="clause" id="en-6">
+      <span class="clause-num">6</span>
+      <h3>Privacy and Personal Data</h3>
+      <p>The processing of personal data within the Hubfloor ecosystem is governed by the <strong>Privacy Policy</strong> and the <strong>Consent Form</strong> of Hubfloor, available on our platform, in accordance with the British Virgin Islands Data Protection Act, 2021 and, where applicable, the GDPR and UK GDPR.</p>
+      <p>By using the services, the user acknowledges and consents to the processing of their data as described in those documents.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="clause" id="en-7">
+      <span class="clause-num">7</span>
+      <h3>Limitation of Liability</h3>
+      <p>The services are provided "as is" and "as available". Hubfloor does not warrant that the services will be uninterrupted, error-free or fully secure.</p>
+      <p>To the maximum extent permitted by applicable law, Hubfloor shall not be liable for:</p>
+      <ul>
+        <li>indirect, incidental, special, consequential or punitive damages;</li>
+        <li>loss of data, loss of profit or business interruption;</li>
+        <li>conduct, content or services provided by Hubers or third parties;</li>
+        <li>technical failures, interruptions or unavailability arising from causes beyond Hubfloor's reasonable control.</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="clause" id="en-8">
+      <span class="clause-num">8</span>
+      <h3>Termination and Suspension</h3>
+      <p>Hubfloor may, at its sole discretion and without prior notice, suspend or terminate the user's access to the platform in the following circumstances:</p>
+      <ul>
+        <li>violation of any provision of these Terms;</li>
+        <li>fraudulent, abusive or harmful conduct towards the ecosystem;</li>
+        <li>order from a competent authority;</li>
+        <li>discontinuation of the services or the platform.</li>
+      </ul>
+      <p>The user may close their account at any time by submitting a formal request to Hubfloor, without prejudice to obligations assumed up to the date of termination.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="clause" id="en-9">
+      <span class="clause-num">9</span>
+      <h3>Modifications to Terms</h3>
+      <p>Hubfloor reserves the right to amend these Terms at any time. Changes will take effect on the date of their publication on the platform, and users will be notified through available communication channels.</p>
+      <p>Continued use of the services following the publication of changes constitutes implicit acceptance of the new Terms.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="clause" id="en-10">
+      <span class="clause-num">10</span>
+      <h3>Governing Law and Jurisdiction</h3>
+      <p>These Terms are governed by the laws of the British Virgin Islands. To the extent that the user is located in the European Union or the United Kingdom, applicable local consumer protection and data protection laws shall additionally apply, as relevant.</p>
+      <p>Any disputes shall be submitted, on a priority basis, to amicable resolution. If unsuccessful, the parties shall submit to the competent jurisdiction under the laws of the British Virgin Islands, without prejudice to the consumer rights provided under the user's local legislation.</p>
+      <div class="highlight">
+        For questions or requests related to these Terms, please contact: <strong>legal@hubfloor.com</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="footer">Hubfloor Ecosystem • Termos de Uso / Terms of Use — v1.0 · Janeiro 2025</div>
+</main>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.lang-section'));
+
+    function setActive(lang) {
+      buttons.forEach(function (btn) {
+        var active = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      sections.forEach(function (s) {
+        s.classList.toggle('is-active', s.getAttribute('data-lang') === lang);
+      });
+      document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+      location.hash = '#' + lang;
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setActive(btn.getAttribute('data-lang')); });
+    });
+
+    var hash = (location.hash || '').replace('#', '');
+    setActive(hash === 'en' ? 'en' : 'pt');
+  })();
+</script>
+</body>
+</html>

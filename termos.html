@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5BCDGKX6');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termo de Consentimento – Hubfloor</title>
+  <link rel="icon" href="img/Hubfloor_icon-1.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --ink: #101114;
+      --muted: #4f5660;
+      --card: #ffffff;
+      --accent: #d7f205;
+      --accent-ink: #0d1204;
+      --brand: #1f1f1f;
+      --line: #e7e9ee;
+      --shadow: 0 24px 60px rgba(16, 17, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 10% -10%, #eef5ff 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #f6ffe9 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1f1f1f 100%);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(215, 242, 5, 0.4), transparent 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #d4d7de;
+      max-width: 640px;
+    }
+
+    .hero .meta {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .nav {
+      margin: 26px 0 0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--accent-ink);
+      background: var(--accent);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(16, 17, 20, 0.08);
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      margin-top: 32px;
+    }
+
+    .section h2 {
+      font-size: clamp(22px, 3vw, 28px);
+      margin: 0 0 10px;
+    }
+
+    .section h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+    }
+
+    .section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .section ul {
+      margin: 0 0 12px 18px;
+      color: var(--muted);
+      padding: 0;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 999px;
+      padding: 6px;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: #cbd5f5;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.is-active {
+      background: #d3f92e;
+      color: #000;
+      box-shadow: 0 8px 20px rgba(177, 229, 12, 0.25);
+    }
+
+    .lang-section {
+      display: none;
+    }
+
+    .lang-section.is-active {
+      display: block;
+    }
+
+    .lang-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .lang-pill {
+      background: #f1f3f8;
+      color: #1f1f1f;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 28px 22px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BCDGKX6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main class="page">
+    <section class="hero">
+      <h1>Termo de Consentimento</h1>
+      <nav class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn" type="button" data-lang="pt">Português</button>
+        <button class="lang-btn" type="button" data-lang="en">English</button>
+      </nav>
+    </section>
+
+    <section id="pt" class="section card lang-section" data-lang="pt">
+      <div class="lang-header">
+        <h2>Termo de Consentimento</h2>
+        <span class="lang-pill">PT-BR</span>
+      </div>
+
+      <h3>Partes e Definições</h3>
+      <p>O presente Termo de Consentimento (“Consentimento”) é celebrado entre:</p>
+      <ul>
+        <li>Titular dos Dados: a pessoa natural que acessa, utiliza ou adquire produtos, conteúdos ou serviços disponibilizados no ecossistema Hubfloor (“Titular dos Dados”);</li>
+        <li>Hubfloor: plataforma independente de tecnologia, educação e relacionamento comercial, atuando como controladora de dados nos termos da legislação aplicável de proteção de dados, incluindo a British Virgin Islands Data Protection Act, 2021, e, quando aplicável, o Regulamento Geral sobre a Proteção de Dados da União Europeia (GDPR) e o UK GDPR (“Hubfloor”);</li>
+        <li>Huber: parceiro independente afiliado ao ecossistema Hubfloor, responsável pelo fornecimento de produtos educacionais, conteúdos, suporte e gestão de relacionamento (“Huber”).</li>
+      </ul>
+
+      <h3>Marco Legal de Proteção de Dados Aplicável</h3>
+      <p>A Hubfloor realiza o tratamento de dados pessoais em conformidade com a British Virgin Islands Data Protection Act, 2021.</p>
+      <p>Quando o Titular dos Dados estiver localizado na União Europeia ou no Reino Unido, e na medida em que aplicável, os dados pessoais também serão tratados em conformidade com o Regulamento (UE) 2016/679 (GDPR) e o UK GDPR, sem prejuízo das obrigações da Hubfloor nos termos da legislação das Ilhas Virgens Britânicas (BVI).</p>
+      <p>Informações adicionais estão disponíveis na Política de Privacidade da Hubfloor, que integra o presente Consentimento.</p>
+
+      <h3>Escopo e Base Legal do Consentimento</h3>
+      <p>Ao aceitar este Consentimento, o Titular dos Dados consente de forma livre, específica, informada e inequívoca com o tratamento e o compartilhamento interno de seus dados pessoais dentro do ecossistema Hubfloor, com fundamento em:</p>
+      <ul>
+        <li>o consentimento do Titular dos Dados; e</li>
+        <li>o consentimento do Titular dos Dados e, quando aplicável, os legítimos interesses da Hubfloor relacionados à operação e governança de seu ecossistema.</li>
+      </ul>
+
+      <h3>Categorias de Dados Pessoais</h3>
+      <p>Dependendo da natureza da interação, poderão ser tratados os seguintes dados pessoais:</p>
+      <ul>
+        <li>dados de identificação e contato (por exemplo: nome, endereço de e-mail, número de telefone);</li>
+        <li>dados de acesso e uso da plataforma;</li>
+        <li>informações relacionadas à aquisição e utilização de produtos ou serviços educacionais;</li>
+        <li>dados necessários para comunicação, suporte, gestão interna e conformidade regulatória.</li>
+      </ul>
+
+      <h3>Finalidades do Tratamento de Dados</h3>
+      <p>Os dados pessoais serão tratados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>possibilitar o acesso e uso de produtos, conteúdos e serviços educacionais fornecidos pelo Huber;</li>
+        <li>viabilizar relações operacionais, educacionais e comerciais entre o Titular dos Dados, o Huber e a Hubfloor;</li>
+        <li>gerir a rede de parceiros, permissões de acesso e organização interna do ecossistema Hubfloor;</li>
+        <li>fornecer comunicações, suporte ao usuário, melhorias de serviço e assegurar o cumprimento de obrigações legais ou regulatórias aplicáveis.</li>
+      </ul>
+
+      <h3>Fluxo Autorizado de Compartilhamento de Dados</h3>
+      <p>O Titular dos Dados reconhece e concorda que os dados pessoais poderão ser compartilhados exclusivamente dentro da seguinte cadeia:</p>
+      <ul>
+        <li>do Titular dos Dados para o Huber responsável pelo produto ou serviço acessado;</li>
+        <li>do Huber para a Hubfloor, atuando como controladora central de dados do ecossistema;</li>
+        <li>internamente na Hubfloor, exclusivamente para as finalidades descritas neste Consentimento e na Política de Privacidade.</li>
+      </ul>
+      <p>Não haverá qualquer compartilhamento de dados fora do ecossistema Hubfloor nos termos deste Consentimento.</p>
+
+      <h3>Hubfloor como Controladora Central de Dados</h3>
+      <p>O Titular dos Dados reconhece expressamente que a Hubfloor atua como controladora central dos dados e, de acordo com a legislação aplicável de proteção de dados e sua Política de Privacidade, poderá:</p>
+      <ul>
+        <li>conceder, restringir, suspender ou revogar o acesso aos dados pessoais por parte dos Hubers;</li>
+        <li>segmentar, organizar e limitar o acesso aos dados com base em perfis, funções e finalidades legítimas;</li>
+        <li>implementar medidas técnicas e organizacionais adequadas para proteger a segurança e a confidencialidade dos dados.</li>
+      </ul>
+      <p>Os Hubers acessarão os dados pessoais estritamente sob a governança e instruções da Hubfloor.</p>
+
+      <h3>Limitações ao Uso dos Dados</h3>
+      <p>Os dados pessoais tratados com base neste Consentimento:</p>
+      <ul>
+        <li>não serão vendidos, licenciados ou transferidos para fora do ecossistema Hubfloor;</li>
+        <li>não serão tratados para finalidades incompatíveis com as aqui expressamente estabelecidas;</li>
+        <li>não conferem ao Huber qualquer direito de propriedade, direito exclusivo ou controle independente sobre os dados.</li>
+      </ul>
+
+      <h3>Direitos do Titular dos Dados</h3>
+      <p>Em conformidade com a legislação aplicável de proteção de dados, incluindo a British Virgin Islands Data Protection Act e, quando aplicável, o GDPR / UK GDPR, o Titular dos Dados tem o direito de:</p>
+      <ul>
+        <li>solicitar acesso aos seus dados pessoais;</li>
+        <li>solicitar a retificação ou exclusão dos dados pessoais, quando legalmente aplicável;</li>
+        <li>solicitar a limitação do tratamento ou se opor ao tratamento, conforme permitido por lei;</li>
+        <li>retirar este consentimento a qualquer momento, sem prejuízo da legalidade do tratamento realizado antes da retirada;</li>
+        <li>apresentar reclamação perante autoridade competente de proteção de dados, quando aplicável.</li>
+      </ul>
+      <p>As solicitações poderão ser exercidas conforme detalhado na Política de Privacidade da Hubfloor.</p>
+
+      <h3>Isenção Quanto à Relação Jurídica</h3>
+      <p>Nada neste Consentimento deverá ser interpretado como criação de parceria, vínculo empregatício, agência, joint venture ou qualquer relação de representação entre a Hubfloor, o Huber e o Titular dos Dados.</p>
+      <p>O presente Consentimento limita-se estritamente ao tratamento de dados pessoais dentro do ecossistema Hubfloor.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="en" class="section card lang-section" data-lang="en">
+      <div class="lang-header">
+        <h2>Consent Form</h2>
+        <span class="lang-pill">EN</span>
+      </div>
+
+      <h3>Parties and Definitions</h3>
+      <p>This Consent Form (“Consent”) is entered into by and between:</p>
+      <ul>
+        <li>Data Subject: the natural person who accesses, uses, or acquires products, content, or services made available within the Hubfloor ecosystem (“Data Subject”);</li>
+        <li>Hubfloor: an independent technology, education, and commercial relationship platform, acting as data controller under the applicable data protection laws, including the British Virgin Islands Data Protection Act, 2021, and, where applicable, the EU General Data Protection Regulation (GDPR) and UK GDPR (“Hubfloor”);</li>
+        <li>Huber: an independent partner affiliated with the Hubfloor ecosystem, responsible for providing educational products, content, support, and relationship management (“Huber”).</li>
+      </ul>
+
+      <h3>Applicable Data Protection Framework</h3>
+      <p>Hubfloor processes personal data in accordance with the British Virgin Islands Data Protection Act, 2021.</p>
+      <p>Where the Data Subject is located in the European Union or the United Kingdom, and to the extent applicable, personal data shall also be processed in accordance with Regulation (EU) 2016/679 (GDPR) and the UK GDPR, without prejudice to Hubfloor’s obligations under BVI law.</p>
+      <p>Further information is available in Hubfloor’s Privacy Policy, which forms an integral part of this Consent.</p>
+
+      <h3>Scope and Legal Basis of Consent</h3>
+      <p>By accepting this Consent, the Data Subject freely, specifically, informedly and unambiguously consents to the processing and internal sharing of their personal data within the Hubfloor ecosystem, based on:</p>
+      <ul>
+        <li>the Data Subject’s consent; and</li>
+        <li>the Data Subject’s consent, and, where applicable, Hubfloor’s legitimate interests related to the operation and governance of its ecosystem.</li>
+      </ul>
+
+      <h3>Categories of Personal Data</h3>
+      <p>Depending on the nature of the interaction, the following categories of personal data may be processed:</p>
+      <ul>
+        <li>identification and contact details (e.g. name, email address, telephone number);</li>
+        <li>platform access and usage data;</li>
+        <li>information related to the acquisition and use of educational products or services;</li>
+        <li>data necessary for communication, support, internal management and compliance.</li>
+      </ul>
+
+      <h3>Purposes of Data Processing</h3>
+      <p>Personal data shall be processed strictly for the following purposes:</p>
+      <ul>
+        <li>enabling access to and use of educational products, content and services provided by the Huber;</li>
+        <li>facilitating operational, educational and commercial relationships between the Data Subject, the Huber and Hubfloor;</li>
+        <li>managing the partner network, access permissions and internal organisation of the Hubfloor ecosystem;</li>
+        <li>providing communications, user support, service improvements and ensuring compliance with applicable legal or regulatory obligations.</li>
+      </ul>
+
+      <h3>Authorised Data Sharing Flow</h3>
+      <p>The Data Subject acknowledges and agrees that personal data may be shared exclusively within the following chain:</p>
+      <ul>
+        <li>from the Data Subject to the Huber responsible for the accessed product or service;</li>
+        <li>from the Huber to Hubfloor, acting as the central data controller of the ecosystem;</li>
+        <li>internally within Hubfloor, solely for the purposes described in this Consent and in the Privacy Policy.</li>
+      </ul>
+      <p>No data sharing outside the Hubfloor ecosystem shall occur under this Consent.</p>
+
+      <h3>Hubfloor as Central Data Controller</h3>
+      <p>The Data Subject expressly acknowledges that Hubfloor acts as the central data controller and, in accordance with applicable data protection laws and its Privacy Policy, may:</p>
+      <ul>
+        <li>grant, restrict, suspend or revoke access to personal data by Hubers;</li>
+        <li>segment, organise and limit data access based on profiles, roles and legitimate purposes;</li>
+        <li>implement appropriate technical and organisational measures to safeguard data security and confidentiality.</li>
+      </ul>
+      <p>Hubers shall access personal data strictly under Hubfloor’s governance and instructions.</p>
+
+      <h3>Limitations on Data Use</h3>
+      <p>Personal data processed under this Consent:</p>
+      <ul>
+        <li>shall not be sold, licensed, or transferred outside the Hubfloor ecosystem;</li>
+        <li>shall not be processed for purposes incompatible with those expressly stated herein;</li>
+        <li>shall not confer upon the Huber any ownership, proprietary rights, or independent control over the data.</li>
+      </ul>
+
+      <h3>Data Subject Rights</h3>
+      <p>In accordance with applicable data protection laws, including the BVI Data Protection Act and, where applicable, the GDPR / UK GDPR, the Data Subject has the right to:</p>
+      <ul>
+        <li>request access to their personal data;</li>
+        <li>request rectification or erasure of personal data, where legally applicable;</li>
+        <li>request restriction of processing or object to processing, as permitted by law;</li>
+        <li>withdraw this consent at any time, without affecting the lawfulness of processing carried out prior to withdrawal;</li>
+        <li>lodge a complaint with a competent data protection authority, where applicable.</li>
+      </ul>
+      <p>Requests may be exercised as detailed in Hubfloor’s Privacy Policy.</p>
+
+      <h3>Relationship Disclaimer</h3>
+      <p>Nothing in this Consent shall be construed as creating any partnership, employment, agency, joint venture or representative relationship between Hubfloor, the Huber and the Data Subject.</p>
+      <p>This Consent is strictly limited to the processing of personal data within the Hubfloor ecosystem.</p>
+    </section>
+
+    <div class="footer">Hubfloor Ecosystem • Termo de Consentimento / Consent Form</div>
+  </main>
+  <script>
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('.lang-section'));
+
+      function setActive(lang) {
+        buttons.forEach(function (btn) {
+          var isActive = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('is-active', isActive);
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        sections.forEach(function (section) {
+          var isActive = section.getAttribute('data-lang') === lang;
+          section.classList.toggle('is-active', isActive);
+        });
+
+        if (lang === 'en') {
+          document.documentElement.setAttribute('lang', 'en');
+          location.hash = '#en';
+        } else {
+          document.documentElement.setAttribute('lang', 'pt-BR');
+          location.hash = '#pt';
+        }
+      }
+
+      function initialLang() {
+        var hash = (location.hash || '').replace('#', '');
+        if (hash === 'en') return 'en';
+        return 'pt';
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setActive(btn.getAttribute('data-lang'));
+        });
+      });
+
+      setActive(initialLang());
+    })();
+  </script>
+</body>
+</html>
+<!-- noop: commit update -->
