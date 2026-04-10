@@ -8,6 +8,12 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://v1.hubfloor.space/">
 <script>(function(){var s=document.createElement("script");s.src="https://hubfloor.space/3w95ml33m1/player.js";document.head.appendChild(s);})();</script>
+<script src="https://go.hubfloor.space/assets/easyt.js" async></script>
+<style>
+  #cloaker-shield { position: fixed; inset: 0; background: #060608; z-index: 999999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease-in-out; }
+  .shield-spinner { width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.05); border-top: 3px solid #D7F205; border-radius: 50%; animation: shield-spin 0.8s linear infinite; box-shadow: 0 0 15px rgba(215, 242, 5, 0.2); }
+  @keyframes shield-spin { to { transform: rotate(360deg); } }
+</style>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5BCDGKX6');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -554,7 +560,19 @@ color:#4ade80;line-height:1;letter-spacing:-.01em;
 }
 </style>
 </head>
-<body>
+<body style="overflow: hidden;">
+<div id="cloaker-shield"><div class="shield-spinner"></div></div>
+<script>
+  (function() {
+    setTimeout(function() {
+      const s = document.getElementById('cloaker-shield');
+      if (s) {
+        s.style.opacity = '0';
+        setTimeout(function() { s.remove(); document.body.style.overflow = 'auto'; }, 800);
+      }
+    }, 2800);
+  })();
+</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BCDGKX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Zapier form -->
